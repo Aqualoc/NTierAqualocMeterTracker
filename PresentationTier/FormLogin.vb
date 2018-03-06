@@ -35,41 +35,16 @@
         End
     End Sub
 
-    Private Sub cboLogin_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboLogin.SelectedIndexChanged
-        If cboLogin.SelectedItem = "Thabo" Then
-        Else
-            If cboLogin.SelectedItem = "Morena" Then
-            Else
-                If cboLogin.SelectedItem = "Rachel" Then
-                Else
-                    If cboLogin.SelectedItem = "Preshen" Then
-                    Else cboLogin.SelectedItem = "Ahmed"
-                    End If
-                End If
-            End If
-        End If
-    End Sub
 
     Private Sub cboLoginStation_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboLoginStation.SelectedIndexChanged
-        If cboLoginStation.SelectedItem = "Test1" Then
-        Else
-            If cboLoginStation.SelectedItem = "Test2" Then
-            Else
-                If cboLoginStation.SelectedItem = "Test3" Then
-                Else
-                    If cboLoginStation.SelectedItem = "Test4" Then
-                    Else cboLoginStation.SelectedItem = "Test5"
-                    End If
-                End If
-            End If
-        End If
+
     End Sub
 
     Private Sub cboLogin_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboLogin.SelectedValueChanged
-        Val = cboLogin.SelectedItem
+        'Val = cboLogin.SelectedItem
     End Sub
 
-    Private Sub cmdLoginReset_Click(sender As Object, e As EventArgs) Handles cmdLoginReset.Click
+    Private Sub cmdLoginReset_Click(sender As Object, e As EventArgs)
         cboLogin.ResetText()
         cboLoginStation.ResetText()
         txtLoginPassword.ResetText()
@@ -78,8 +53,17 @@
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtLoginPassword.PasswordChar = "*"
-        txtLoginPassword.MaxLength = 9
         Dim DataSvc As New ServiceReference1.Service1Client
         AqualocDataSet.Users.Merge(DataSvc.GetUsers)
+        cboLogin.DataSource = AqualocDataSet.Users
+        cboLogin.DisplayMember = "FirstName"
+
+
+
+
+    End Sub
+
+    Private Sub LblloginHeading_Click(sender As Object, e As EventArgs) Handles LblloginHeading.Click
+
     End Sub
 End Class
