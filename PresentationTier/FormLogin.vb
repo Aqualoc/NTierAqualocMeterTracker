@@ -136,10 +136,8 @@ Public Class frmLogin
 
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtLoginPassword.PasswordChar = "*"
-
         txtLoginPassword.MaxLength = 9
+        Dim DataSvc As New ServiceReference1.Service1Client
+        AqualocDataSet.Users.Merge(DataSvc.GetUsers)
     End Sub
-
-
-
 End Class
