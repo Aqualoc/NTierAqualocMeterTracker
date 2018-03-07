@@ -1,44 +1,28 @@
 ﻿Public Class frmLogin
-    Dim Val As String = String.Empty
+    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim DataSvc As New ServiceReference1.Service1Client
+        AqualocDataSet.Users.Merge(DataSvc.GetUsers)
+        AqualocDataSet.Stations.Merge(DataSvc.GetStations)
+        cboLogin.DataSource = AqualocDataSet.Users
+        cboLogin.DisplayMember = "FirstName"
+        cboLoginStation.DataSource = AqualocDataSet.Stations
+        cboLoginStation.DisplayMember = "stationName"
+    End Sub
+
     Private Sub cmbLoginOk_Click(sender As Object, e As EventArgs) Handles cmbLoginOk.Click
-        Dim SecondForm As New frmScanning
-        SecondForm.TxtScanningOperator.Text = Val
-        If txtLoginPassword.Text = "a" And
-            cboLogin.SelectedIndex <> -1 And
-            cboLoginStation.SelectedIndex <> -1 Then
-            SecondForm.Show()
-            Me.Hide()
-        Else
-            If txtLoginPassword.Text = "" Then
-                MsgBox("No Password found!", MsgBoxStyle.Critical, "Error")
-            Else
-                If cboLogin.SelectedItem = "" Then
-                    MsgBox("No Login Selected!", MsgBoxStyle.Critical, "Error")
-                Else
-                    If cboLoginStation.SelectedItem = "" Then
-                        MsgBox("No Station Selected!", MsgBoxStyle.Critical, "Error")
-                    Else
-                        If cboLoginStation.SelectedItem = "" And cboLogin.SelectedItem = "" Then
-
-                            MsgBox("No Login & Station Selected!", MsgBoxStyle.Critical, "Error")
-
-                        Else
-                            MsgBox("Invalid Password!", MsgBoxStyle.Critical, "Error")
-                        End If
-                    End If
-                End If
-            End If
+        Dim vrow As DataRowView
+        vrow = cboLogin.SelectedItem
+        If txtLoginPassword.Text = vrow(6) Then
+            MsgBox("Fuck Yes")
         End If
+
     End Sub
 
     Private Sub cmbLoginCancel_Click(sender As Object, e As EventArgs) Handles cmbLoginCancel.Click
         End
     End Sub
 
-    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cboLogin.DataSource = AqualocDataSet.Users
-        cboLogin.DisplayMember = "FirstName"
-        cboLoginStation.DataSource = AqualocDataSet.Stations
-        cboLoginStation.DisplayMember = "Stations"
-    End Sub
 End Class
+
+'AqualocDataSet.Users.AddUsersRow(20, "Vadia", "Ahmed", "", "", "", "")
+'AqualocDataSet.AcceptChanges()

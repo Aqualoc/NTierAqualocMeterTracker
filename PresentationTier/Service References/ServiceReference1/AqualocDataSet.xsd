@@ -3,6 +3,35 @@
   <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="AqualocDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Stations">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StationID" type="xs:int" />
+              <xs:element minOccurs="0" name="stationName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="stationFunctions">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="stationActive" type="xs:boolean" />
+              <xs:element minOccurs="0" name="stationNotes">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="Users">
           <xs:complexType>
             <xs:sequence>
@@ -42,12 +71,23 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element minOccurs="0" name="UserPassword">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Stations" />
+      <xs:field xpath="mstns:StationID" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Users_Constraint1">
       <xs:selector xpath=".//mstns:Users" />
       <xs:field xpath="mstns:PersonID" />
     </xs:unique>

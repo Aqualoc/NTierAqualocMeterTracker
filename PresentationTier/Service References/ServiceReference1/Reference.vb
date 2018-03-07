@@ -100,6 +100,12 @@ Namespace ServiceReference1
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetUsers", ReplyAction:="http://tempuri.org/IService1/GetUsersResponse")>  _
         Function GetUsersAsync() As System.Threading.Tasks.Task(Of DataEntityTier.AqualocDataSet.UsersDataTable)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetStations", ReplyAction:="http://tempuri.org/IService1/GetStationsResponse")>  _
+        Function GetStations() As DataEntityTier.AqualocDataSet.StationsDataTable
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetStations", ReplyAction:="http://tempuri.org/IService1/GetStationsResponse")>  _
+        Function GetStationsAsync() As System.Threading.Tasks.Task(Of DataEntityTier.AqualocDataSet.StationsDataTable)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -155,6 +161,14 @@ Namespace ServiceReference1
         
         Public Function GetUsersAsync() As System.Threading.Tasks.Task(Of DataEntityTier.AqualocDataSet.UsersDataTable) Implements ServiceReference1.IService1.GetUsersAsync
             Return MyBase.Channel.GetUsersAsync
+        End Function
+        
+        Public Function GetStations() As DataEntityTier.AqualocDataSet.StationsDataTable Implements ServiceReference1.IService1.GetStations
+            Return MyBase.Channel.GetStations
+        End Function
+        
+        Public Function GetStationsAsync() As System.Threading.Tasks.Task(Of DataEntityTier.AqualocDataSet.StationsDataTable) Implements ServiceReference1.IService1.GetStationsAsync
+            Return MyBase.Channel.GetStationsAsync
         End Function
     End Class
 End Namespace

@@ -11,6 +11,11 @@ Public Class Service1
         Return UsersTableAdapter1.GetUsers()
     End Function
 
+    Public Function GetStations() As DataEntityTier.AqualocDataSet.StationsDataTable Implements IService1.GetStations
+        Dim UsersTableAdapter2 As New DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter
+        Return UsersTableAdapter2.GetStations()
+    End Function
+
     Public Function GetDataUsingDataContract(ByVal composite As CompositeType) As CompositeType Implements IService1.GetDataUsingDataContract
         If composite Is Nothing Then
             Throw New ArgumentNullException("composite")

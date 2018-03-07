@@ -12,6 +12,9 @@ Public Interface IService1
     <OperationContract()>
     Function GetUsers() As DataEntityTier.AqualocDataSet.UsersDataTable
 
+    <OperationContract()>
+    Function GetStations() As DataEntityTier.AqualocDataSet.StationsDataTable
+
 End Interface
 
 ' Use a data contract as illustrated in the sample below to add composite types to service operations.
