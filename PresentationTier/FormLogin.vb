@@ -57,10 +57,6 @@
         AqualocDataSet.Users.Merge(DataSvc.GetUsers)
         cboLogin.DataSource = AqualocDataSet.Users
         cboLogin.DisplayMember = "FirstName"
-
-
-
-
     End Sub
 
     Private Sub LblloginHeading_Click(sender As Object, e As EventArgs) Handles LblloginHeading.Click
