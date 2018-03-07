@@ -44,76 +44,85 @@ Partial Class frmLogin
         'LblloginHeading
         '
         Me.LblloginHeading.AutoSize = True
-        Me.LblloginHeading.Font = New System.Drawing.Font("Calibri", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblloginHeading.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LblloginHeading.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblloginHeading.Location = New System.Drawing.Point(92, 14)
         Me.LblloginHeading.Name = "LblloginHeading"
-        Me.LblloginHeading.Size = New System.Drawing.Size(258, 29)
+        Me.LblloginHeading.Size = New System.Drawing.Size(275, 32)
         Me.LblloginHeading.TabIndex = 0
-        Me.LblloginHeading.Text = "Please Login To Proceed:"
-        Me.LblloginHeading.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LblloginHeading.Text = "Please Login to Proceed:"
+        Me.LblloginHeading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLoginLog
         '
         Me.LblLoginLog.AutoSize = True
-        Me.LblLoginLog.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLoginLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LblLoginLog.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblLoginLog.Location = New System.Drawing.Point(73, 66)
         Me.LblLoginLog.Name = "LblLoginLog"
-        Me.LblLoginLog.Size = New System.Drawing.Size(100, 23)
+        Me.LblLoginLog.Size = New System.Drawing.Size(59, 25)
         Me.LblLoginLog.TabIndex = 1
-        Me.LblLoginLog.Text = "User Login :"
+        Me.LblLoginLog.Text = "User :"
         '
         'LblLoginPassword
         '
         Me.LblLoginPassword.AutoSize = True
-        Me.LblLoginPassword.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLoginPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LblLoginPassword.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblLoginPassword.Location = New System.Drawing.Point(73, 114)
         Me.LblLoginPassword.Name = "LblLoginPassword"
-        Me.LblLoginPassword.Size = New System.Drawing.Size(95, 23)
+        Me.LblLoginPassword.Size = New System.Drawing.Size(100, 25)
         Me.LblLoginPassword.TabIndex = 2
         Me.LblLoginPassword.Text = "Password :"
         '
         'LblLoginStation
         '
         Me.LblLoginStation.AutoSize = True
-        Me.LblLoginStation.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLoginStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LblLoginStation.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblLoginStation.Location = New System.Drawing.Point(73, 165)
         Me.LblLoginStation.Name = "LblLoginStation"
-        Me.LblLoginStation.Size = New System.Drawing.Size(74, 23)
+        Me.LblLoginStation.Size = New System.Drawing.Size(79, 25)
         Me.LblLoginStation.TabIndex = 3
         Me.LblLoginStation.Text = "Station :"
         '
         'cboLogin
         '
-        Me.cboLogin.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboLogin.FormattingEnabled = True
+        Me.cboLogin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cboLogin.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboLogin.Items.AddRange(New Object() {"Thabo", "Rachel", "Morena", "Ahmed ", "Preshen "})
         Me.cboLogin.Location = New System.Drawing.Point(175, 67)
         Me.cboLogin.Name = "cboLogin"
-        Me.cboLogin.Size = New System.Drawing.Size(190, 26)
+        Me.cboLogin.Size = New System.Drawing.Size(190, 28)
         Me.cboLogin.TabIndex = 4
         '
         'txtLoginPassword
         '
-        Me.txtLoginPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLoginPassword.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLoginPassword.Location = New System.Drawing.Point(175, 114)
         Me.txtLoginPassword.Name = "txtLoginPassword"
-        Me.txtLoginPassword.Size = New System.Drawing.Size(190, 24)
+        Me.txtLoginPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.txtLoginPassword.Size = New System.Drawing.Size(190, 27)
         Me.txtLoginPassword.TabIndex = 5
         '
         'cboLoginStation
         '
-        Me.cboLoginStation.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboLoginStation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboLoginStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cboLoginStation.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboLoginStation.FormattingEnabled = True
         Me.cboLoginStation.Items.AddRange(New Object() {"Test1", "Test2", "Test3", "Test4", "Test5"})
         Me.cboLoginStation.Location = New System.Drawing.Point(175, 162)
         Me.cboLoginStation.Name = "cboLoginStation"
-        Me.cboLoginStation.Size = New System.Drawing.Size(190, 26)
+        Me.cboLoginStation.Size = New System.Drawing.Size(190, 28)
         Me.cboLoginStation.TabIndex = 6
         '
         'cmbLoginCancel
         '
         Me.cmbLoginCancel.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.cmbLoginCancel.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
+        Me.cmbLoginCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmbLoginCancel.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
         Me.cmbLoginCancel.Location = New System.Drawing.Point(12, 258)
         Me.cmbLoginCancel.Name = "cmbLoginCancel"
         Me.cmbLoginCancel.Size = New System.Drawing.Size(441, 34)
@@ -124,7 +133,8 @@ Partial Class frmLogin
         'cmbLoginOk
         '
         Me.cmbLoginOk.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.cmbLoginOk.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbLoginOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmbLoginOk.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbLoginOk.Location = New System.Drawing.Point(12, 206)
         Me.cmbLoginOk.Name = "cmbLoginOk"
         Me.cmbLoginOk.Size = New System.Drawing.Size(441, 34)
@@ -157,7 +167,7 @@ Partial Class frmLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(465, 411)
+        Me.ClientSize = New System.Drawing.Size(462, 411)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.cmbLoginOk)
         Me.Controls.Add(Me.cmbLoginCancel)

@@ -35,31 +35,10 @@
         End
     End Sub
 
-
-    Private Sub cboLoginStation_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboLoginStation.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub cboLogin_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboLogin.SelectedValueChanged
-        'Val = cboLogin.SelectedItem
-    End Sub
-
-    Private Sub cmdLoginReset_Click(sender As Object, e As EventArgs)
-        cboLogin.ResetText()
-        cboLoginStation.ResetText()
-        txtLoginPassword.ResetText()
-        cboLogin.Focus()
-    End Sub
-
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtLoginPassword.PasswordChar = "*"
-        Dim DataSvc As New ServiceReference1.Service1Client
-        AqualocDataSet.Users.Merge(DataSvc.GetUsers)
         cboLogin.DataSource = AqualocDataSet.Users
         cboLogin.DisplayMember = "FirstName"
-    End Sub
-
-    Private Sub LblloginHeading_Click(sender As Object, e As EventArgs) Handles LblloginHeading.Click
-
+        cboLoginStation.DataSource = AqualocDataSet.Stations
+        cboLoginStation.DisplayMember = "Stations"
     End Sub
 End Class
