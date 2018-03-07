@@ -1,34 +1,55 @@
 ﻿Public Class frmLogin
     Dim Val As String = String.Empty
     Private Sub cmbLoginOk_Click(sender As Object, e As EventArgs) Handles cmbLoginOk.Click
-        Dim SecondForm As New frmScanning
-        SecondForm.TxtScanningOperator.Text = Val
-        If txtLoginPassword.Text = "a" And
-            cboLogin.SelectedIndex <> -1 And
-            cboLoginStation.SelectedIndex <> -1 Then
-            SecondForm.Show()
-            Me.Hide()
+
+
+
+        If cboLogin.SelectedItem = My.Settings.Admin And txtLoginPassword.Text = My.Settings.AdminPass And
+            cboLoginStation.SelectedItem = My.Settings.Station Then
+
+
+            Call admin()
+
         Else
-            If txtLoginPassword.Text = "" Then
-                MsgBox("No Password found!", MsgBoxStyle.Critical, "Error")
+            If cboLogin.SelectedItem = My.Settings.User And txtLoginPassword.Text = My.Settings.UserPass And
+                cboLoginStation.SelectedItem = My.Settings.Station Then
+
+
+                Call user()
+
+
+
             Else
-                If cboLogin.SelectedItem = "" Then
-                    MsgBox("No Login Selected!", MsgBoxStyle.Critical, "Error")
+                If txtLoginPassword.Text = "" Then
+                    MsgBox("No Password found!", MsgBoxStyle.Critical, "Error")
                 Else
-                    If cboLoginStation.SelectedItem = "" Then
-                        MsgBox("No Station Selected!", MsgBoxStyle.Critical, "Error")
+                    If cboLogin.SelectedItem = "" Then
+                        MsgBox("No Login Selected!", MsgBoxStyle.Critical, "Error")
                     Else
-                        If cboLoginStation.SelectedItem = "" And cboLogin.SelectedItem = "" Then
-
-                            MsgBox("No Login & Station Selected!", MsgBoxStyle.Critical, "Error")
-
+                        If cboLoginStation.SelectedItem = "" Then
+                            MsgBox("No Station Selected!", MsgBoxStyle.Critical, "Error")
                         Else
-                            MsgBox("Invalid Password!", MsgBoxStyle.Critical, "Error")
+
+
+
+                            If cboLogin.SelectedItem <> My.Settings.Admin And cboLoginStation.SelectedItem <> My.Settings.User Then
+                                MsgBox("no Login & Station Selected!", MsgBoxStyle.Critical, "Error")
+
+
+
+
+                            Else
+
+                                MsgBox("Invalid Password!", MsgBoxStyle.Critical, "Error")
+                            End If
                         End If
                     End If
                 End If
             End If
         End If
+
+
+
     End Sub
 
     Private Sub cmbLoginCancel_Click(sender As Object, e As EventArgs) Handles cmbLoginCancel.Click
@@ -81,5 +102,21 @@
         txtLoginPassword.MaxLength = 9
         Dim DataSvc As New ServiceReference1.Service1Client
         AqualocDataSet.Users.Merge(DataSvc.GetUsers)
+    End Sub
+
+    Private Sub admin()
+        Dim FirthForm As New frmMain
+        FirthForm.Show()
+        Me.Hide()
+
+
+
+    End Sub
+
+    Private Sub user()
+        Dim SecondForm As New frmScanning
+        SecondForm.TxtScanningOperator.Text = Val
+        SecondForm.Show()
+        Me.Hide()
     End Sub
 End Class
