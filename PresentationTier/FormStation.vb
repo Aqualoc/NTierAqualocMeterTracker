@@ -55,35 +55,8 @@
 
 
     End Sub
-    Private Sub chkScanningOperator_CheckedChanged(sender As Object, e As EventArgs) Handles chkScanningOperator.CheckedChanged
 
 
-
-        If chkScanningOperator.Checked = True Then
-
-            TxtScanningOperator.Enabled = True
-
-
-        Else TxtScanningOperator.Enabled = False
-
-        End If
-    End Sub
-
-    Private Sub chkScanning_CheckedChanged(sender As Object, e As EventArgs) Handles chkScanning.CheckedChanged
-
-
-        If chkScanning.Checked = True Then
-
-            TxtScanningConfig.Enabled = True
-            TxtScanningConfig.Focus()
-
-        Else
-            TxtScanningConfig.Enabled = False
-
-        End If
-
-
-    End Sub
 
     Private Sub ButtonScanningPass_Click(sender As Object, e As EventArgs) Handles ButtonScanningPass.Click
 
@@ -112,7 +85,7 @@
 
         Static n As Integer
         n = n + 1
-        Me.LblFail.Text = n.ToString()
+        'Me.LblFail.Text = n.ToString()
 
         TxtScanningHeading.ResetText()
         TxtScanningHeading.Focus()
