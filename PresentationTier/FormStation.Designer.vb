@@ -41,7 +41,7 @@ Partial Class frmScanning
         Me.ButtonScanningPass.BackColor = System.Drawing.Color.Ivory
         Me.ButtonScanningPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonScanningPass.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonScanningPass.Location = New System.Drawing.Point(12, 218)
+        Me.ButtonScanningPass.Location = New System.Drawing.Point(12, 149)
         Me.ButtonScanningPass.Name = "ButtonScanningPass"
         Me.ButtonScanningPass.Size = New System.Drawing.Size(142, 72)
         Me.ButtonScanningPass.TabIndex = 0
@@ -53,7 +53,7 @@ Partial Class frmScanning
         Me.ButtonScanningFail.BackColor = System.Drawing.Color.Red
         Me.ButtonScanningFail.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonScanningFail.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonScanningFail.Location = New System.Drawing.Point(160, 218)
+        Me.ButtonScanningFail.Location = New System.Drawing.Point(160, 149)
         Me.ButtonScanningFail.Name = "ButtonScanningFail"
         Me.ButtonScanningFail.Size = New System.Drawing.Size(139, 72)
         Me.ButtonScanningFail.TabIndex = 1
@@ -75,7 +75,7 @@ Partial Class frmScanning
         Me.ButtonScanningNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonScanningNext.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonScanningNext.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.ButtonScanningNext.Location = New System.Drawing.Point(12, 334)
+        Me.ButtonScanningNext.Location = New System.Drawing.Point(12, 265)
         Me.ButtonScanningNext.Name = "ButtonScanningNext"
         Me.ButtonScanningNext.Size = New System.Drawing.Size(287, 72)
         Me.ButtonScanningNext.TabIndex = 4
@@ -85,7 +85,7 @@ Partial Class frmScanning
         'TxtScanningHeading
         '
         Me.TxtScanningHeading.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtScanningHeading.Location = New System.Drawing.Point(51, 175)
+        Me.TxtScanningHeading.Location = New System.Drawing.Point(51, 106)
         Me.TxtScanningHeading.Name = "TxtScanningHeading"
         Me.TxtScanningHeading.Size = New System.Drawing.Size(228, 22)
         Me.TxtScanningHeading.TabIndex = 6
@@ -124,7 +124,7 @@ Partial Class frmScanning
         '
         Me.LblPass.AutoSize = True
         Me.LblPass.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblPass.Location = New System.Drawing.Point(35, 293)
+        Me.LblPass.Location = New System.Drawing.Point(35, 224)
         Me.LblPass.Name = "LblPass"
         Me.LblPass.Size = New System.Drawing.Size(0, 13)
         Me.LblPass.TabIndex = 13
@@ -133,7 +133,7 @@ Partial Class frmScanning
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(175, 303)
+        Me.Label2.Location = New System.Drawing.Point(175, 234)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 14
@@ -143,7 +143,7 @@ Partial Class frmScanning
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(30, 303)
+        Me.Label3.Location = New System.Drawing.Point(30, 234)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(67, 13)
         Me.Label3.TabIndex = 15
@@ -154,7 +154,7 @@ Partial Class frmScanning
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(311, 418)
+        Me.ClientSize = New System.Drawing.Size(311, 350)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LblPass)

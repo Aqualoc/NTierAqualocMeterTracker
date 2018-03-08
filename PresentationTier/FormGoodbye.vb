@@ -28,19 +28,7 @@
 
 
     End Sub
-    Private Sub chkFinal_CheckedChanged(sender As Object, e As EventArgs) Handles chkFinal.CheckedChanged
 
-
-        If chkFinal.Checked = True Then
-
-            TxtFinalHeading.Enabled = True
-            TxtFinalHeading.Focus()
-
-        Else TxtFinalHeading.Enabled = False
-
-
-        End If
-    End Sub
 End Class
 
 

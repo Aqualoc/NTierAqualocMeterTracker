@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmFinal
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,21 +20,20 @@ Partial Class frmFinal
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFinal))
         Me.LblFinalHeading = New System.Windows.Forms.Label()
         Me.TxtFinalHeading = New System.Windows.Forms.TextBox()
         Me.ButtonFinalLogout = New System.Windows.Forms.Button()
         Me.ButtonFinalBack = New System.Windows.Forms.Button()
-        Me.chkFinal = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'LblFinalHeading
         '
         Me.LblFinalHeading.AutoSize = True
         Me.LblFinalHeading.Font = New System.Drawing.Font("Calibri", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblFinalHeading.Location = New System.Drawing.Point(17, 66)
+        Me.LblFinalHeading.Location = New System.Drawing.Point(15, 9)
         Me.LblFinalHeading.Name = "LblFinalHeading"
         Me.LblFinalHeading.Size = New System.Drawing.Size(282, 29)
         Me.LblFinalHeading.TabIndex = 6
@@ -43,7 +42,7 @@ Partial Class frmFinal
         'TxtFinalHeading
         '
         Me.TxtFinalHeading.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtFinalHeading.Location = New System.Drawing.Point(59, 122)
+        Me.TxtFinalHeading.Location = New System.Drawing.Point(57, 65)
         Me.TxtFinalHeading.Name = "TxtFinalHeading"
         Me.TxtFinalHeading.Size = New System.Drawing.Size(193, 26)
         Me.TxtFinalHeading.TabIndex = 7
@@ -52,7 +51,7 @@ Partial Class frmFinal
         '
         Me.ButtonFinalLogout.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ButtonFinalLogout.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonFinalLogout.Location = New System.Drawing.Point(33, 175)
+        Me.ButtonFinalLogout.Location = New System.Drawing.Point(31, 118)
         Me.ButtonFinalLogout.Name = "ButtonFinalLogout"
         Me.ButtonFinalLogout.Size = New System.Drawing.Size(116, 53)
         Me.ButtonFinalLogout.TabIndex = 8
@@ -63,29 +62,19 @@ Partial Class frmFinal
         '
         Me.ButtonFinalBack.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ButtonFinalBack.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonFinalBack.Location = New System.Drawing.Point(168, 175)
+        Me.ButtonFinalBack.Location = New System.Drawing.Point(166, 118)
         Me.ButtonFinalBack.Name = "ButtonFinalBack"
         Me.ButtonFinalBack.Size = New System.Drawing.Size(116, 53)
         Me.ButtonFinalBack.TabIndex = 9
         Me.ButtonFinalBack.Text = "Back "
         Me.ButtonFinalBack.UseVisualStyleBackColor = False
         '
-        'chkFinal
-        '
-        Me.chkFinal.AutoSize = True
-        Me.chkFinal.Location = New System.Drawing.Point(258, 128)
-        Me.chkFinal.Name = "chkFinal"
-        Me.chkFinal.Size = New System.Drawing.Size(15, 14)
-        Me.chkFinal.TabIndex = 10
-        Me.chkFinal.UseVisualStyleBackColor = True
-        '
         'frmFinal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(311, 308)
-        Me.Controls.Add(Me.chkFinal)
+        Me.ClientSize = New System.Drawing.Size(311, 197)
         Me.Controls.Add(Me.ButtonFinalBack)
         Me.Controls.Add(Me.ButtonFinalLogout)
         Me.Controls.Add(Me.TxtFinalHeading)
@@ -103,5 +92,4 @@ Partial Class frmFinal
     Friend WithEvents TxtFinalHeading As TextBox
     Friend WithEvents ButtonFinalLogout As Button
     Friend WithEvents ButtonFinalBack As Button
-    Friend WithEvents chkFinal As CheckBox
 End Class

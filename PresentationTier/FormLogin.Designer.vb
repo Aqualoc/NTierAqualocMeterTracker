@@ -29,16 +29,22 @@ Partial Class frmLogin
         Me.LblLoginPassword = New System.Windows.Forms.Label()
         Me.LblLoginStation = New System.Windows.Forms.Label()
         Me.cboLogin = New System.Windows.Forms.ComboBox()
+        Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
         Me.txtLoginPassword = New System.Windows.Forms.TextBox()
         Me.cboLoginStation = New System.Windows.Forms.ComboBox()
         Me.cmbLoginCancel = New System.Windows.Forms.Button()
         Me.cmbLoginOk = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
         Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AqualocDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AqualocDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AqualocDataSetBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AqualocDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AqualocDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AqualocDataSetBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LblloginHeading
@@ -91,11 +97,15 @@ Partial Class frmLogin
         Me.cboLogin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cboLogin.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboLogin.Items.AddRange(New Object() {"Thabo", "Rachel", "Morena", "Ahmed ", "Preshen "})
         Me.cboLogin.Location = New System.Drawing.Point(175, 67)
         Me.cboLogin.Name = "cboLogin"
         Me.cboLogin.Size = New System.Drawing.Size(190, 28)
         Me.cboLogin.TabIndex = 4
+        '
+        'AqualocDataSet
+        '
+        Me.AqualocDataSet.DataSetName = "AqualocDataSet"
+        Me.AqualocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'txtLoginPassword
         '
@@ -112,7 +122,6 @@ Partial Class frmLogin
         Me.cboLoginStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cboLoginStation.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboLoginStation.FormattingEnabled = True
-        Me.cboLoginStation.Items.AddRange(New Object() {"Test1", "Test2", "Test3", "Test4", "Test5"})
         Me.cboLoginStation.Location = New System.Drawing.Point(175, 162)
         Me.cboLoginStation.Name = "cboLoginStation"
         Me.cboLoginStation.Size = New System.Drawing.Size(190, 28)
@@ -152,15 +161,25 @@ Partial Class frmLogin
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
         '
-        'AqualocDataSet
-        '
-        Me.AqualocDataSet.DataSetName = "AqualocDataSet"
-        Me.AqualocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'UsersBindingSource
         '
         Me.UsersBindingSource.DataMember = "Users"
         Me.UsersBindingSource.DataSource = Me.AqualocDataSet
+        '
+        'AqualocDataSetBindingSource
+        '
+        Me.AqualocDataSetBindingSource.DataSource = GetType(DataEntityTier.AqualocDataSet)
+        Me.AqualocDataSetBindingSource.Position = 0
+        '
+        'AqualocDataSetBindingSource1
+        '
+        Me.AqualocDataSetBindingSource1.DataSource = GetType(DataEntityTier.AqualocDataSet)
+        Me.AqualocDataSetBindingSource1.Position = 0
+        '
+        'AqualocDataSetBindingSource2
+        '
+        Me.AqualocDataSetBindingSource2.DataSource = GetType(DataEntityTier.AqualocDataSet)
+        Me.AqualocDataSetBindingSource2.Position = 0
         '
         'frmLogin
         '
@@ -182,9 +201,12 @@ Partial Class frmLogin
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmLogin"
         Me.Text = "Login"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AqualocDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AqualocDataSetBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AqualocDataSetBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -202,4 +224,7 @@ Partial Class frmLogin
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents AqualocDataSet As DataEntityTier.AqualocDataSet
     Friend WithEvents UsersBindingSource As BindingSource
+    Friend WithEvents AqualocDataSetBindingSource2 As BindingSource
+    Friend WithEvents AqualocDataSetBindingSource1 As BindingSource
+    Friend WithEvents AqualocDataSetBindingSource As BindingSource
 End Class
