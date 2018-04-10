@@ -176,6 +176,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccessTier\DataAccessTier.vbproj">
+      <Project>{4038565A-5350-46A9-A26D-5D9143F7A551}</Project>
+      <Name>DataAccessTier</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataEntityTier\DataEntityTier.vbproj">
       <Project>{8ad35a6b-9281-437e-bf12-d0958ee1a18d}</Project>
       <Name>DataEntityTier</Name>

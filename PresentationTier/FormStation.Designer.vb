@@ -75,7 +75,7 @@ Partial Class frmScanning
         Me.ButtonScanningNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonScanningNext.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonScanningNext.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.ButtonScanningNext.Location = New System.Drawing.Point(12, 265)
+        Me.ButtonScanningNext.Location = New System.Drawing.Point(10, 265)
         Me.ButtonScanningNext.Name = "ButtonScanningNext"
         Me.ButtonScanningNext.Size = New System.Drawing.Size(287, 72)
         Me.ButtonScanningNext.TabIndex = 4

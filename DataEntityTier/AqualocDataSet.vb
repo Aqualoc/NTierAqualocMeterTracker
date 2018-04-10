@@ -1,8 +1,24 @@
 ﻿Partial Class AqualocDataSet
     Partial Public Class UsersDataTable
-        Private Sub UsersDataTable_UsersRowChanging(sender As Object, e As UsersRowChangeEvent) Handles Me.UsersRowChanging
 
+        Private Sub UsersDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
+            'If (e.Column.ColumnName = Me.LastNameColumn.ColumnName) Then
+            'If CType(e.ProposedValue, String) = "Ahmed" Then
+            'MsgBox("yay")
+            'End If
+            ' End If
+            'AqualocDataSetTableAdapters
         End Sub
 
     End Class
+
+    Public Shared Function login(ByRef userRow As DataRowView, ByRef enteredPassword As String)
+        Dim currentUserPwd As String = userRow(6)
+        If enteredPassword = currentUserPwd Then
+            Return True
+        End If
+        Return False
+    End Function
+
+    Public Shared Function
 End Class

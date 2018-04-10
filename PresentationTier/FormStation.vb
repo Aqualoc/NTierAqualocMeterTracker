@@ -1,5 +1,4 @@
 ﻿Public Class frmScanning
-    Dim Keyascii As Double
 
     Private Sub ButtonScanningNext_Click(sender As Object, e As EventArgs) Handles ButtonScanningNext.Click
         Dim txtScanningHeading As Double
@@ -39,6 +38,6 @@
     End Sub
 
     Private Sub frmScanning_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TxtScanningOperator.Text = frmLogin.currentUserDataRow(2)
+        ' TxtScanningOperator.Text = frmLogin.currentUserDataRow(2)
     End Sub
 End Class
