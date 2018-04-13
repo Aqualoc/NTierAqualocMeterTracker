@@ -13,9 +13,7 @@ Public Class FormStation
     End Sub
 
     Private Sub ButtonScanningNext_Click(sender As Object, e As EventArgs) Handles ButtonScanningNext.Click
-        Close()
         Dim txtScanningHeading As Double
-
         If txtScanningHeading = vbEmpty Then
         Else
             ButtonScanningPass.BackColor = Color.Green
@@ -23,9 +21,6 @@ Public Class FormStation
             n = n + 1
             Me.LblPass.Text = n.ToString()
             Application.DoEvents()
-            Dim ThirdForm As New FormFinal
-            ThirdForm.Show()
-            Me.Hide()
         End If
     End Sub
 
@@ -43,7 +38,6 @@ Public Class FormStation
         n = n + 1
         TxtScanningHeading.ResetText()
         TxtScanningHeading.Focus()
-
     End Sub
 
     Private Sub ButtonScanningPass_Click(sender As Object, e As EventArgs) Handles ButtonScanningPass.Click

@@ -29,21 +29,21 @@ Partial Class FormLogin
         Me.LblLoginPassword = New System.Windows.Forms.Label()
         Me.LblLoginStation = New System.Windows.Forms.Label()
         Me.cboLogin = New System.Windows.Forms.ComboBox()
+        Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
         Me.txtLoginPassword = New System.Windows.Forms.TextBox()
         Me.cboLoginStation = New System.Windows.Forms.ComboBox()
+        Me.StationsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.cmbLoginCancel = New System.Windows.Forms.Button()
         Me.cmbLoginOk = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.UsersTableAdapter = New DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter()
         Me.TableAdapterManager = New DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager()
         Me.StationsTableAdapter = New DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter()
-        Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StationsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StationsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LblloginHeading
@@ -105,6 +105,11 @@ Partial Class FormLogin
         Me.cboLogin.TabIndex = 4
         Me.cboLogin.ValueMember = "PersonID"
         '
+        'UsersBindingSource
+        '
+        Me.UsersBindingSource.DataMember = "Users"
+        Me.UsersBindingSource.DataSource = Me.AqualocDataSet
+        '
         'AqualocDataSet
         '
         Me.AqualocDataSet.DataSetName = "AqualocDataSet"
@@ -133,6 +138,11 @@ Partial Class FormLogin
         Me.cboLoginStation.TabIndex = 6
         Me.cboLoginStation.ValueMember = "StationID"
         '
+        'StationsBindingSource
+        '
+        Me.StationsBindingSource.DataMember = "Stations"
+        Me.StationsBindingSource.DataSource = Me.AqualocDataSet
+        '
         'cmbLoginCancel
         '
         Me.cmbLoginCancel.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -160,9 +170,9 @@ Partial Class FormLogin
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(2, 381)
+        Me.PictureBox1.Location = New System.Drawing.Point(1, 372)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(463, 57)
+        Me.PictureBox1.Size = New System.Drawing.Size(463, 96)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
@@ -182,22 +192,12 @@ Partial Class FormLogin
         '
         Me.StationsTableAdapter.ClearBeforeFill = True
         '
-        'UsersBindingSource
-        '
-        Me.UsersBindingSource.DataMember = "Users"
-        Me.UsersBindingSource.DataSource = Me.AqualocDataSet
-        '
-        'StationsBindingSource
-        '
-        Me.StationsBindingSource.DataMember = "Stations"
-        Me.StationsBindingSource.DataSource = Me.AqualocDataSet
-        '
         'FormLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(464, 489)
+        Me.ClientSize = New System.Drawing.Size(467, 489)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.cmbLoginOk)
         Me.Controls.Add(Me.cmbLoginCancel)
@@ -212,10 +212,10 @@ Partial Class FormLogin
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormLogin"
         Me.Text = "Login"
-        CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StationsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
