@@ -42,80 +42,80 @@ Partial Class FormQc
         'LblStation
         '
         Me.LblStation.AutoSize = True
-        Me.LblStation.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblStation.Location = New System.Drawing.Point(25, 75)
+        Me.LblStation.Font = New System.Drawing.Font("Segoe UI Semilight", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblStation.Location = New System.Drawing.Point(16, 75)
         Me.LblStation.Name = "LblStation"
-        Me.LblStation.Size = New System.Drawing.Size(66, 23)
+        Me.LblStation.Size = New System.Drawing.Size(68, 25)
         Me.LblStation.TabIndex = 0
         Me.LblStation.Text = "Station"
         '
         'LblProblem
         '
         Me.LblProblem.AutoSize = True
-        Me.LblProblem.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblProblem.Font = New System.Drawing.Font("Segoe UI Semilight", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblProblem.Location = New System.Drawing.Point(306, 71)
         Me.LblProblem.Name = "LblProblem"
-        Me.LblProblem.Size = New System.Drawing.Size(77, 23)
+        Me.LblProblem.Size = New System.Drawing.Size(80, 25)
         Me.LblProblem.TabIndex = 1
         Me.LblProblem.Text = "Problem"
         '
         'LblStatus
         '
         Me.LblStatus.AutoSize = True
-        Me.LblStatus.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblStatus.Font = New System.Drawing.Font("Segoe UI Semilight", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblStatus.Location = New System.Drawing.Point(306, 256)
         Me.LblStatus.Name = "LblStatus"
-        Me.LblStatus.Size = New System.Drawing.Size(60, 23)
+        Me.LblStatus.Size = New System.Drawing.Size(61, 25)
         Me.LblStatus.TabIndex = 2
         Me.LblStatus.Text = "Status"
         '
         'LblDateTime
         '
         Me.LblDateTime.AutoSize = True
-        Me.LblDateTime.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblDateTime.Font = New System.Drawing.Font("Segoe UI Semilight", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblDateTime.Location = New System.Drawing.Point(16, 259)
         Me.LblDateTime.Name = "LblDateTime"
-        Me.LblDateTime.Size = New System.Drawing.Size(124, 23)
+        Me.LblDateTime.Size = New System.Drawing.Size(132, 25)
         Me.LblDateTime.TabIndex = 3
         Me.LblDateTime.Text = "Date and Time"
         '
         'LblFix
         '
         Me.LblFix.AutoSize = True
-        Me.LblFix.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblFix.Location = New System.Drawing.Point(324, 161)
+        Me.LblFix.Font = New System.Drawing.Font("Segoe UI Semilight", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblFix.Location = New System.Drawing.Point(306, 161)
         Me.LblFix.Name = "LblFix"
-        Me.LblFix.Size = New System.Drawing.Size(33, 23)
+        Me.LblFix.Size = New System.Drawing.Size(33, 25)
         Me.LblFix.TabIndex = 4
         Me.LblFix.Text = "Fix"
         '
         'LblBarcode
         '
         Me.LblBarcode.AutoSize = True
-        Me.LblBarcode.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblBarcode.Font = New System.Drawing.Font("Segoe UI Semilight", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblBarcode.Location = New System.Drawing.Point(16, 131)
         Me.LblBarcode.Name = "LblBarcode"
-        Me.LblBarcode.Size = New System.Drawing.Size(75, 23)
+        Me.LblBarcode.Size = New System.Drawing.Size(80, 25)
         Me.LblBarcode.TabIndex = 5
         Me.LblBarcode.Text = "Barcode"
         '
         'LblBatch
         '
         Me.LblBatch.AutoSize = True
-        Me.LblBatch.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblBatch.Font = New System.Drawing.Font("Segoe UI Semilight", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblBatch.Location = New System.Drawing.Point(16, 196)
         Me.LblBatch.Name = "LblBatch"
-        Me.LblBatch.Size = New System.Drawing.Size(124, 23)
+        Me.LblBatch.Size = New System.Drawing.Size(130, 25)
         Me.LblBatch.TabIndex = 6
         Me.LblBatch.Text = "Batch Number"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(209, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(157, 36)
+        Me.Label2.Size = New System.Drawing.Size(177, 40)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "QC Analysis"
         '
@@ -174,7 +174,7 @@ Partial Class FormQc
         Me.txtQcDate.Size = New System.Drawing.Size(112, 20)
         Me.txtQcDate.TabIndex = 14
         '
-        'frmQc
+        'FormQc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -195,7 +195,7 @@ Partial Class FormQc
         Me.Controls.Add(Me.LblStatus)
         Me.Controls.Add(Me.LblProblem)
         Me.Controls.Add(Me.LblStation)
-        Me.Name = "frmQc"
+        Me.Name = "FormQc"
         Me.Text = "FormQC"
         Me.ResumeLayout(False)
         Me.PerformLayout()
