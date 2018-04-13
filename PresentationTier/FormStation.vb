@@ -1,17 +1,29 @@
-﻿Public Class frmScanning
+﻿Imports DataEntityTier
+
+Public Class FormStation
+    Private currentUserDataRow As DataRowView
+
+    Public Sub New(currentUserDataRow As DataRowView)
+        Me.currentUserDataRow = currentUserDataRow
+    End Sub
+
+    Private Sub frmScanning_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        InitializeComponent()
+        Me.CenterToScreen()
+    End Sub
 
     Private Sub ButtonScanningNext_Click(sender As Object, e As EventArgs) Handles ButtonScanningNext.Click
+        Close()
         Dim txtScanningHeading As Double
 
         If txtScanningHeading = vbEmpty Then
-            MsgBox("Scan Barcode Here!", MsgBoxStyle.Critical, "Stupid")
         Else
             ButtonScanningPass.BackColor = Color.Green
             Static n As Integer
             n = n + 1
             Me.LblPass.Text = n.ToString()
             Application.DoEvents()
-            Dim ThirdForm As New frmFinal
+            Dim ThirdForm As New FormFinal
             ThirdForm.Show()
             Me.Hide()
         End If
@@ -24,20 +36,16 @@
         End If
     End Sub
 
-    Public Sub forms(ByRef Val As String)
-        Val = String.Empty
-    End Sub
-
     Private Sub ButtonScanningFail_Click(sender As Object, e As EventArgs) Handles ButtonScanningFail.Click
+        MsgBox("Please Scan A valid Barcode!", MsgBoxStyle.Critical, "Error")
         TxtScanningHeading.Focus()
         Static n As Integer
         n = n + 1
-        'Me.LblFail.Text = n.ToString()
         TxtScanningHeading.ResetText()
         TxtScanningHeading.Focus()
+
     End Sub
 
-    Private Sub frmScanning_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' TxtScanningOperator.Text = frmLogin.currentUserDataRow(2)
+    Private Sub ButtonScanningPass_Click(sender As Object, e As EventArgs) Handles ButtonScanningPass.Click
     End Sub
 End Class

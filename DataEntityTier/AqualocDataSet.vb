@@ -2,12 +2,6 @@
     Partial Public Class UsersDataTable
 
         Private Sub UsersDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
-            'If (e.Column.ColumnName = Me.LastNameColumn.ColumnName) Then
-            'If CType(e.ProposedValue, String) = "Ahmed" Then
-            'MsgBox("yay")
-            'End If
-            ' End If
-            'AqualocDataSetTableAdapters
         End Sub
 
     End Class
@@ -20,5 +14,4 @@
         Return False
     End Function
 
-    Public Shared Function
 End Class

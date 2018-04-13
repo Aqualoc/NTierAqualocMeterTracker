@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmMain
+Partial Class FormAdmin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,16 +22,161 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.btnCreateUser = New System.Windows.Forms.Button()
+        Me.btnDeleteUser = New System.Windows.Forms.Button()
+        Me.btnCreateStation = New System.Windows.Forms.Button()
+        Me.btnDeleteStation = New System.Windows.Forms.Button()
+        Me.btnCreateStickers = New System.Windows.Forms.Button()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'frmMain
+        'btnCreateUser
+        '
+        Me.btnCreateUser.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCreateUser.Location = New System.Drawing.Point(180, 108)
+        Me.btnCreateUser.Name = "btnCreateUser"
+        Me.btnCreateUser.Size = New System.Drawing.Size(113, 50)
+        Me.btnCreateUser.TabIndex = 0
+        Me.btnCreateUser.Text = "Create User"
+        Me.btnCreateUser.UseVisualStyleBackColor = True
+        '
+        'btnDeleteUser
+        '
+        Me.btnDeleteUser.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeleteUser.Location = New System.Drawing.Point(61, 255)
+        Me.btnDeleteUser.Name = "btnDeleteUser"
+        Me.btnDeleteUser.Size = New System.Drawing.Size(113, 50)
+        Me.btnDeleteUser.TabIndex = 1
+        Me.btnDeleteUser.Text = "Delete User"
+        Me.btnDeleteUser.UseVisualStyleBackColor = True
+        '
+        'btnCreateStation
+        '
+        Me.btnCreateStation.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCreateStation.Location = New System.Drawing.Point(61, 108)
+        Me.btnCreateStation.Name = "btnCreateStation"
+        Me.btnCreateStation.Size = New System.Drawing.Size(113, 50)
+        Me.btnCreateStation.TabIndex = 2
+        Me.btnCreateStation.Text = "Create Station"
+        Me.btnCreateStation.UseVisualStyleBackColor = True
+        '
+        'btnDeleteStation
+        '
+        Me.btnDeleteStation.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeleteStation.Location = New System.Drawing.Point(299, 255)
+        Me.btnDeleteStation.Name = "btnDeleteStation"
+        Me.btnDeleteStation.Size = New System.Drawing.Size(113, 50)
+        Me.btnDeleteStation.TabIndex = 3
+        Me.btnDeleteStation.Text = "Delete Station"
+        Me.btnDeleteStation.UseVisualStyleBackColor = True
+        '
+        'btnCreateStickers
+        '
+        Me.btnCreateStickers.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCreateStickers.Location = New System.Drawing.Point(299, 108)
+        Me.btnCreateStickers.Name = "btnCreateStickers"
+        Me.btnCreateStickers.Size = New System.Drawing.Size(113, 50)
+        Me.btnCreateStickers.TabIndex = 8
+        Me.btnCreateStickers.Text = "Create Stickers"
+        Me.btnCreateStickers.UseVisualStyleBackColor = True
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Items.AddRange(New Object() {"Reo", "Ahmed", "Preshen ", "Desigan", "Thabo", "Morena", "Rachel"})
+        Me.ComboBox3.Location = New System.Drawing.Point(40, 215)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(189, 21)
+        Me.ComboBox3.TabIndex = 11
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Items.AddRange(New Object() {"Test 1", "Test 2", "Test 3", "Test 4", "Test 5"})
+        Me.ComboBox4.Location = New System.Drawing.Point(252, 215)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(195, 21)
+        Me.ComboBox4.TabIndex = 12
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(189, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(104, 40)
+        Me.Label1.TabIndex = 13
+        Me.Label1.Text = "Admin"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(36, 71)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(411, 23)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "Please click on the procedure you wish to perfrom."
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(134, 179)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(200, 23)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Select an item to delete"
+        '
+        'Button6
+        '
+        Me.Button6.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Location = New System.Drawing.Point(135, 331)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(184, 52)
+        Me.Button6.TabIndex = 8
+        Me.Button6.Text = "Next"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'FormAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(493, 419)
-        Me.Name = "frmMain"
+        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ComboBox4)
+        Me.Controls.Add(Me.ComboBox3)
+        Me.Controls.Add(Me.btnCreateStickers)
+        Me.Controls.Add(Me.btnDeleteStation)
+        Me.Controls.Add(Me.btnCreateStation)
+        Me.Controls.Add(Me.btnDeleteUser)
+        Me.Controls.Add(Me.btnCreateUser)
+        Me.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Name = "FormAdmin"
         Me.Text = "Admin Main"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
+
+    Friend WithEvents btnCreateUser As Button
+    Friend WithEvents btnDeleteUser As Button
+    Friend WithEvents btnCreateStation As Button
+    Friend WithEvents btnDeleteStation As Button
+    Friend WithEvents btnCreateStickers As Button
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Button6 As Button
 End Class

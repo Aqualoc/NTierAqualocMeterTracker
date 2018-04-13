@@ -80,6 +80,18 @@
     <Compile Include="FormAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormCreating.Designer.vb">
+      <DependentUpon>FormCreating.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCreating.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQC.Designer.vb">
+      <DependentUpon>FormQC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormQC.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormStation.Designer.vb">
       <DependentUpon>FormStation.vb</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -88,21 +100,12 @@
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="FormGoodbye.Designer.vb">
-      <DependentUpon>FormGoodbye.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormGoodbye.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormLogin.Designer.vb">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module1.vb" />
-    <Compile Include="Module2.vb" />
-    <Compile Include="Module3.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -128,12 +131,15 @@
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCreating.resx">
+      <DependentUpon>FormCreating.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQC.resx">
+      <DependentUpon>FormQC.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormStation.resx">
       <DependentUpon>FormStation.vb</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormGoodbye.resx">
-      <DependentUpon>FormGoodbye.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>

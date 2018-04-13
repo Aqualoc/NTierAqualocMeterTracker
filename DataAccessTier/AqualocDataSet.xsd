@@ -193,7 +193,7 @@ SELECT PersonID, LastName, FirstName, Perms, Notes, City, UserPassword FROM User
   <xs:element name="AqualocDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="AqualocDataSet" msprop:Generator_UserDSName="AqualocDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Stations" msprop:Generator_TableClassName="StationsDataTable" msprop:Generator_TableVarName="tableStations" msprop:Generator_RowChangedName="StationsRowChanged" msprop:Generator_TablePropName="Stations" msprop:Generator_RowDeletingName="StationsRowDeleting" msprop:Generator_RowChangingName="StationsRowChanging" msprop:Generator_RowEvHandlerName="StationsRowChangeEventHandler" msprop:Generator_RowDeletedName="StationsRowDeleted" msprop:Generator_RowClassName="StationsRow" msprop:Generator_UserTableName="Stations" msprop:Generator_RowEvArgName="StationsRowChangeEvent">
+        <xs:element name="Stations" msprop:Generator_TableClassName="StationsDataTable" msprop:Generator_TableVarName="tableStations" msprop:Generator_TablePropName="Stations" msprop:Generator_RowDeletingName="StationsRowDeleting" msprop:Generator_RowChangingName="StationsRowChanging" msprop:Generator_RowEvHandlerName="StationsRowChangeEventHandler" msprop:Generator_RowDeletedName="StationsRowDeleted" msprop:Generator_UserTableName="Stations" msprop:Generator_RowChangedName="StationsRowChanged" msprop:Generator_RowEvArgName="StationsRowChangeEvent" msprop:Generator_RowClassName="StationsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StationID" msprop:Generator_ColumnVarNameInTable="columnStationID" msprop:Generator_ColumnPropNameInRow="StationID" msprop:Generator_ColumnPropNameInTable="StationIDColumn" msprop:Generator_UserColumnName="StationID" type="xs:int" />
@@ -222,7 +222,7 @@ SELECT PersonID, LastName, FirstName, Perms, Notes, City, UserPassword FROM User
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_UserTableName="Users" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_RowEvArgName="UsersRowChangeEvent" msprop:Generator_RowClassName="UsersRow">
+        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_RowClassName="UsersRow" msprop:Generator_UserTableName="Users" msprop:Generator_RowEvArgName="UsersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PersonID" msprop:Generator_ColumnVarNameInTable="columnPersonID" msprop:Generator_ColumnPropNameInRow="PersonID" msprop:Generator_ColumnPropNameInTable="PersonIDColumn" msprop:Generator_UserColumnName="PersonID" type="xs:int" />

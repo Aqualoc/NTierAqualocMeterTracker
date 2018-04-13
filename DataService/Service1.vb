@@ -7,13 +7,13 @@ Public Class Service1
     End Function
 
     Public Function GetUsers() As DataEntityTier.AqualocDataSet.UsersDataTable Implements IService1.GetUsers
-        Dim UsersTableAdapter1 As New DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter
-        Return UsersTableAdapter1.GetUsers()
+        Dim UsersTableAdapter As New DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter
+        Return UsersTableAdapter.GetUsers()
     End Function
 
     Public Function GetStations() As DataEntityTier.AqualocDataSet.StationsDataTable Implements IService1.GetStations
-        Dim UsersTableAdapter2 As New DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter
-        Return UsersTableAdapter2.GetStations()
+        Dim StationsTableAdapter As New DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter
+        Return StationsTableAdapter.GetStations()
     End Function
 
     Public Function GetDataUsingDataContract(ByVal composite As CompositeType) As CompositeType Implements IService1.GetDataUsingDataContract

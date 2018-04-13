@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmScanning
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FormStation
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,10 @@ Partial Class frmScanning
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmScanning))
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormStation))
         Me.ButtonScanningPass = New System.Windows.Forms.Button()
         Me.ButtonScanningFail = New System.Windows.Forms.Button()
         Me.TxtScanningConfig = New System.Windows.Forms.TextBox()
@@ -34,16 +35,21 @@ Partial Class frmScanning
         Me.LblPass = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
+        Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonScanningPass
         '
         Me.ButtonScanningPass.BackColor = System.Drawing.Color.Ivory
         Me.ButtonScanningPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonScanningPass.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonScanningPass.Location = New System.Drawing.Point(12, 149)
+        Me.ButtonScanningPass.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonScanningPass.Location = New System.Drawing.Point(207, 220)
+        Me.ButtonScanningPass.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ButtonScanningPass.Name = "ButtonScanningPass"
-        Me.ButtonScanningPass.Size = New System.Drawing.Size(142, 72)
+        Me.ButtonScanningPass.Size = New System.Drawing.Size(189, 110)
         Me.ButtonScanningPass.TabIndex = 0
         Me.ButtonScanningPass.Text = "Pass"
         Me.ButtonScanningPass.UseVisualStyleBackColor = False
@@ -52,10 +58,11 @@ Partial Class frmScanning
         '
         Me.ButtonScanningFail.BackColor = System.Drawing.Color.Red
         Me.ButtonScanningFail.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonScanningFail.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonScanningFail.Location = New System.Drawing.Point(160, 149)
+        Me.ButtonScanningFail.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonScanningFail.Location = New System.Drawing.Point(13, 220)
+        Me.ButtonScanningFail.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ButtonScanningFail.Name = "ButtonScanningFail"
-        Me.ButtonScanningFail.Size = New System.Drawing.Size(139, 72)
+        Me.ButtonScanningFail.Size = New System.Drawing.Size(185, 110)
         Me.ButtonScanningFail.TabIndex = 1
         Me.ButtonScanningFail.Text = "Fail"
         Me.ButtonScanningFail.UseVisualStyleBackColor = False
@@ -64,20 +71,22 @@ Partial Class frmScanning
         '
         Me.TxtScanningConfig.Enabled = False
         Me.TxtScanningConfig.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtScanningConfig.Location = New System.Drawing.Point(149, 45)
+        Me.TxtScanningConfig.Location = New System.Drawing.Point(199, 70)
+        Me.TxtScanningConfig.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtScanningConfig.Name = "TxtScanningConfig"
-        Me.TxtScanningConfig.Size = New System.Drawing.Size(100, 22)
+        Me.TxtScanningConfig.Size = New System.Drawing.Size(132, 22)
         Me.TxtScanningConfig.TabIndex = 2
         '
         'ButtonScanningNext
         '
         Me.ButtonScanningNext.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ButtonScanningNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonScanningNext.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonScanningNext.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonScanningNext.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.ButtonScanningNext.Location = New System.Drawing.Point(10, 265)
+        Me.ButtonScanningNext.Location = New System.Drawing.Point(13, 409)
+        Me.ButtonScanningNext.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ButtonScanningNext.Name = "ButtonScanningNext"
-        Me.ButtonScanningNext.Size = New System.Drawing.Size(287, 72)
+        Me.ButtonScanningNext.Size = New System.Drawing.Size(383, 110)
         Me.ButtonScanningNext.TabIndex = 4
         Me.ButtonScanningNext.Text = "Finish"
         Me.ButtonScanningNext.UseVisualStyleBackColor = False
@@ -85,18 +94,20 @@ Partial Class frmScanning
         'TxtScanningHeading
         '
         Me.TxtScanningHeading.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtScanningHeading.Location = New System.Drawing.Point(51, 106)
+        Me.TxtScanningHeading.Location = New System.Drawing.Point(68, 164)
+        Me.TxtScanningHeading.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtScanningHeading.Name = "TxtScanningHeading"
-        Me.TxtScanningHeading.Size = New System.Drawing.Size(228, 22)
+        Me.TxtScanningHeading.Size = New System.Drawing.Size(303, 22)
         Me.TxtScanningHeading.TabIndex = 6
         '
         'LblScanningOperator
         '
         Me.LblScanningOperator.AutoSize = True
-        Me.LblScanningOperator.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblScanningOperator.Location = New System.Drawing.Point(48, 77)
+        Me.LblScanningOperator.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblScanningOperator.Location = New System.Drawing.Point(64, 119)
+        Me.LblScanningOperator.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblScanningOperator.Name = "LblScanningOperator"
-        Me.LblScanningOperator.Size = New System.Drawing.Size(57, 13)
+        Me.LblScanningOperator.Size = New System.Drawing.Size(72, 20)
         Me.LblScanningOperator.TabIndex = 7
         Me.LblScanningOperator.Text = "Operator:"
         '
@@ -104,57 +115,72 @@ Partial Class frmScanning
         '
         Me.TxtScanningOperator.Enabled = False
         Me.TxtScanningOperator.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtScanningOperator.Location = New System.Drawing.Point(149, 77)
+        Me.TxtScanningOperator.Location = New System.Drawing.Point(199, 119)
+        Me.TxtScanningOperator.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtScanningOperator.Name = "TxtScanningOperator"
-        Me.TxtScanningOperator.Size = New System.Drawing.Size(100, 22)
+        Me.TxtScanningOperator.Size = New System.Drawing.Size(132, 22)
         Me.TxtScanningOperator.TabIndex = 8
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label1.Location = New System.Drawing.Point(48, 51)
+        Me.Label1.Location = New System.Drawing.Point(64, 79)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(83, 13)
+        Me.Label1.Size = New System.Drawing.Size(103, 20)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Configuration:"
         '
         'LblPass
         '
         Me.LblPass.AutoSize = True
-        Me.LblPass.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblPass.Location = New System.Drawing.Point(35, 224)
+        Me.LblPass.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblPass.Location = New System.Drawing.Point(47, 345)
+        Me.LblPass.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblPass.Name = "LblPass"
-        Me.LblPass.Size = New System.Drawing.Size(0, 13)
+        Me.LblPass.Size = New System.Drawing.Size(0, 20)
         Me.LblPass.TabIndex = 13
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(175, 234)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(233, 360)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 13)
+        Me.Label2.Size = New System.Drawing.Size(77, 20)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Fail Count:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(30, 234)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(40, 360)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(67, 13)
+        Me.Label3.Size = New System.Drawing.Size(82, 20)
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "Pass Count:"
         '
-        'frmScanning
+        'AqualocDataSet
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AqualocDataSet.DataSetName = "AqualocDataSet"
+        Me.AqualocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UsersBindingSource
+        '
+        Me.UsersBindingSource.DataMember = "Users"
+        Me.UsersBindingSource.DataSource = Me.AqualocDataSet
+        '
+        'FormStation
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(311, 350)
+        Me.ClientSize = New System.Drawing.Size(423, 539)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LblPass)
@@ -166,11 +192,15 @@ Partial Class frmScanning
         Me.Controls.Add(Me.TxtScanningConfig)
         Me.Controls.Add(Me.ButtonScanningFail)
         Me.Controls.Add(Me.ButtonScanningPass)
+        Me.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Name = "frmScanning"
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Name = "FormStation"
         Me.Text = "Scanning Process"
+        CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -187,4 +217,6 @@ Partial Class frmScanning
     Friend WithEvents LblPass As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents AqualocDataSet As DataEntityTier.AqualocDataSet
+    Friend WithEvents UsersBindingSource As BindingSource
 End Class
