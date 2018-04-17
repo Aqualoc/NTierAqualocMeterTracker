@@ -7,7 +7,7 @@
     End Class
 
     Public Shared Function login(ByRef userRow As DataRowView, ByRef enteredPassword As String)
-        Dim currentUserPwd As String = userRow(6)
+        Dim currentUserPwd As String = userRow(3)
         If enteredPassword = currentUserPwd Then
             Return True
         End If

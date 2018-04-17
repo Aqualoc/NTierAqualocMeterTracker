@@ -38,17 +38,9 @@ Partial Class FormStation
         Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
         Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MetersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MetersDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MetersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MetersDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonScanningPass
@@ -190,60 +182,12 @@ Partial Class FormStation
         Me.MetersBindingSource.DataMember = "Meters"
         Me.MetersBindingSource.DataSource = Me.AqualocDataSet
         '
-        'MetersDataGridView
-        '
-        Me.MetersDataGridView.AutoGenerateColumns = False
-        Me.MetersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetersDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
-        Me.MetersDataGridView.DataSource = Me.MetersBindingSource
-        Me.MetersDataGridView.Location = New System.Drawing.Point(540, 145)
-        Me.MetersDataGridView.Name = "MetersDataGridView"
-        Me.MetersDataGridView.Size = New System.Drawing.Size(300, 220)
-        Me.MetersDataGridView.TabIndex = 15
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "MeterID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "MeterID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "MeterNumber"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "MeterNumber"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "MeterManufacturedDate"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "MeterManufacturedDate"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "MeterDispatchDate"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "MeterDispatchDate"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "QrCode"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "QrCode"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Revision"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Revision"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
         'FormStation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(860, 539)
-        Me.Controls.Add(Me.MetersDataGridView)
+        Me.ClientSize = New System.Drawing.Size(421, 539)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LblPass)
@@ -265,7 +209,6 @@ Partial Class FormStation
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MetersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MetersDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -285,11 +228,6 @@ Partial Class FormStation
     Friend WithEvents AqualocDataSet As DataEntityTier.AqualocDataSet
     Friend WithEvents UsersBindingSource As BindingSource
     Friend WithEvents MetersBindingSource As BindingSource
-    Friend WithEvents MetersDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
 End Class

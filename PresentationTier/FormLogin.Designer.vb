@@ -94,7 +94,7 @@ Partial Class FormLogin
         'cboLogin
         '
         Me.cboLogin.DataSource = Me.UsersBindingSource
-        Me.cboLogin.DisplayMember = "FirstName"
+        Me.cboLogin.DisplayMember = "UserFirstName"
         Me.cboLogin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cboLogin.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -103,7 +103,7 @@ Partial Class FormLogin
         Me.cboLogin.Name = "cboLogin"
         Me.cboLogin.Size = New System.Drawing.Size(190, 28)
         Me.cboLogin.TabIndex = 4
-        Me.cboLogin.ValueMember = "PersonID"
+        Me.cboLogin.ValueMember = "UserID"
         '
         'UsersBindingSource
         '
@@ -184,6 +184,8 @@ Partial Class FormLogin
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.meterQcPointTableAdapter = Nothing
+        Me.TableAdapterManager.MetersTableAdapter = Nothing
         Me.TableAdapterManager.StationsTableAdapter = Me.StationsTableAdapter
         Me.TableAdapterManager.UpdateOrder = DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsersTableAdapter = Me.UsersTableAdapter

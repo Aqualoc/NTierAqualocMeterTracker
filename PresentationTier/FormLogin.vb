@@ -8,13 +8,13 @@ Public Class FormLogin
     End Sub
 
     Private Sub cmbLoginOk_Click(sender As Object, e As EventArgs) Handles cmbLoginOk.Click
-
+        'MsgBox("Here")
         Dim currentUserDataRow As DataRowView = cboLogin.SelectedItem
         Dim currentUserStation As DataRowView = cboLoginStation.SelectedItem
         Dim enteredPassword As String = txtLoginPassword.Text
         '#todo salt and hash passwords
         If (DataEntityTier.AqualocDataSet.login(currentUserDataRow, enteredPassword)) Then
-            Dim currentUserRole As String = currentUserDataRow(3)
+            Dim currentUserRole As String = currentUserDataRow(4)
             Select Case currentUserRole
                 Case "A"
                     Dim FormAdmin As New FormAdmin()

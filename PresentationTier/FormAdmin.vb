@@ -3,9 +3,9 @@
     Public Property user As DataRowView
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        UsersTableAdapter.Fill(Me.AqualocDataSet.Users)
-        StationsTableAdapter.Fill(Me.AqualocDataSet.Stations)
-        MetersTableAdapter.Fill(Me.AqualocDataSet.Meters)
+        UsersTableAdapter1.Fill(Me.AqualocDataSet.Users)
+        'StationsTableAdapter.Fill(Me.AqualocDataSet.Stations)
+        MetersTableAdapter1.Fill(Me.AqualocDataSet.Meters)
         CenterToScreen()
     End Sub
 
@@ -14,58 +14,56 @@
         'find last sticker number in db
         'allocate spaces for next V meters in the database
         'print out the appropriate V stickers for each meter
-        Dim newMeters As String
+        Dim newMeters As Integer
         newMeters = InputBox("How many stickers do you want to create?", "Enter Number of Meters", "0")
-        If newMeters = "0" Then
+        If newMeters < 1 Then
             MessageBox.Show("You must enter the number of meters to continue.")
-            'Exit Sub
-        ElseIf newMeters = "" Then
-            'Exit Sub
+            Exit Sub
+        ElseIf newMeters = Nothing Then
+            MsgBox("Nothing")
+            Exit Sub
         Else
-            ' Dim newMeterRow As DataEntityTier.AqualocDataSet.MetersRow
+            For newMeters1 = newMeters To 1 Step -1
+                Dim newMeterRow As DataEntityTier.AqualocDataSet.MetersRow = AqualocDataSet.Meters.NewMetersRow
+                newMeterRow.MeterManufacturedDate = Date.Now()
+                'newMeterRow.MeterID = newMeters
+                AqualocDataSet.Meters.AddMetersRow(newMeterRow)
+            Next newMeters1
+            Try
+                UseWaitCursor = True
+                Validate()
+                UsersBindingSource.EndEdit()
+                TableAdapterManager1.UpdateAll(AqualocDataSet)
+                UseWaitCursor = False
+            Catch
+                ' UseWaitCursor = False
+            End Try
+
         End If
-
-        Dim newRow As DataEntityTier.AqualocDataSet.UsersRow = AqualocDataSet.Users.NewUsersRow
-        'Dim newRow As DataEntityTier.AqualocDataSet.User
-        'UsersTableAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey
-        newRow.PersonID = "9"
-        newRow.FirstName = "me"
-        newRow.LastName = "Vadia"
-        newRow.Perms = "a"
-        newRow.City = "Durban"
-        newRow.UserPassword = 7791
-        AqualocDataSet.Users.AddUsersRow(newRow)
-        'Dim dc As DataEntityTier.AqualocDataSet.
-        'AqualocDataSet.Users.
-        Try
-            UseWaitCursor = True
-            Validate()
-            UsersBindingSource.EndEdit()
-            TableAdapterManager.UpdateAll(AqualocDataSet)
-            UseWaitCursor = False
-        Catch
-            UseWaitCursor = False
-        End Try
-    End Sub
-    Public Sub SetValue(ByVal aValue As String)
-        btnDeleteUser.Text = aValue
-        ' Do something else
+        MsgBox("Done")
     End Sub
 
-    Private Sub btnCreateUser_Click(sender As Object, e As EventArgs) Handles btnCreateUser.Click
-        MsgBox("Test")
-    End Sub
-
-    Private Sub MetersBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs) Handles MetersBindingNavigatorSaveItem.Click
+    Private Sub MetersBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs)
         UseWaitCursor = True
         Validate()
         MetersBindingSource.EndEdit()
-        TableAdapterManager.UpdateAll(AqualocDataSet)
+        TableAdapterManager1.UpdateAll(AqualocDataSet)
         'UseWaitCursor = False
     End Sub
-
-    Private Sub MetersDataGridView_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles MetersDataGridView.CellContentClick
-
-
-    End Sub
 End Class
+'Dim newrow As DataEntityTier.AqualocDataSet.UsersRow = AqualocDataSet.Users.NewUsersRow
+'newrow.UserFirstName = "test"
+'newrow.UserLastName = "test"
+'newrow.UserPerms = "a"
+'newrow.UserCity = "jhb"
+'newrow.UserPassword = 2222
+'AqualocDataSet.Users.AddUsersRow(newrow)
+'Try
+'    UseWaitCursor = True
+'    Validate()
+'    UsersBindingSource.EndEdit()
+'    TableAdapterManager1.UpdateAll(AqualocDataSet)
+'    UseWaitCursor = False
+'Catch
+'    UseWaitCursor = False
+'End Try
