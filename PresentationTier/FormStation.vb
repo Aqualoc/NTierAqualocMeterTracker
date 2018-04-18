@@ -15,7 +15,9 @@ Public Class FormStation
         Me.CenterToScreen()
     End Sub
 
+    Private Sub ButtonScanningPass_Click(sender As Object, e As EventArgs) Handles ButtonScanningPass.Click
 
+    End Sub
 End Class
 
 'Private Sub ButtonScanningFail_Click(sender As Object, e As EventArgs) Handles ButtonScanningFail.Click

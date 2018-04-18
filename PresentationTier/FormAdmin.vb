@@ -26,13 +26,15 @@
             For newMeters1 = newMeters To 1 Step -1
                 Dim newMeterRow As DataEntityTier.AqualocDataSet.MetersRow = AqualocDataSet.Meters.NewMetersRow
                 newMeterRow.MeterManufacturedDate = Date.Now()
-                'newMeterRow.MeterID = newMeters
+                Dim lastRow = AqualocDataSet.Meters.Rows(AqualocDataSet.Meters.Rows.Count() - 1)
+                newMeterRow.MeterNumber = CType(lastRow(1), Integer) + 1
                 AqualocDataSet.Meters.AddMetersRow(newMeterRow)
+                MetersBindingSource.EndEdit()
             Next newMeters1
             Try
                 UseWaitCursor = True
                 Validate()
-                UsersBindingSource.EndEdit()
+                MetersBindingSource.EndEdit()
                 TableAdapterManager1.UpdateAll(AqualocDataSet)
                 UseWaitCursor = False
             Catch
@@ -40,14 +42,6 @@
             End Try
         End If
         MsgBox("Meters Added")
-    End Sub
-
-    Private Sub MetersBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs)
-        UseWaitCursor = True
-        Validate()
-        MetersBindingSource.EndEdit()
-        TableAdapterManager1.UpdateAll(AqualocDataSet)
-        'UseWaitCursor = False
     End Sub
 
     Private Sub btnCreateUser_Click(sender As Object, e As EventArgs) Handles btnCreateUser.Click
@@ -70,3 +64,11 @@ End Class
 'Catch
 '    UseWaitCursor = False
 'End Try
+
+'Private Sub metersbindingnavigatorsaveitem_click_1(sender As Object, e As EventArgs)
+'    UseWaitCursor = True
+'    Validate()
+'    MetersBindingSource.EndEdit()
+'    TableAdapterManager1.UpdateAll(AqualocDataSet)
+'    UseWaitCursor = False
+'End Sub

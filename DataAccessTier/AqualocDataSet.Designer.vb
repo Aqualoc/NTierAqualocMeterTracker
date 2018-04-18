@@ -222,7 +222,7 @@ Namespace AqualocDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.DataAccessTier.My.MySettings.Default.AqualocConnectionString1
+            Me._connection.ConnectionString = Global.DataAccessTier.My.MySettings.Default.AqualocConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -699,7 +699,7 @@ Namespace AqualocDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.DataAccessTier.My.MySettings.Default.AqualocConnectionString1
+            Me._connection.ConnectionString = Global.DataAccessTier.My.MySettings.Default.AqualocConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1182,7 +1182,7 @@ Namespace AqualocDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.DataAccessTier.My.MySettings.Default.AqualocConnectionString1
+            Me._connection.ConnectionString = Global.DataAccessTier.My.MySettings.Default.AqualocConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1660,7 +1660,7 @@ Namespace AqualocDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.DataAccessTier.My.MySettings.Default.AqualocConnectionString1
+            Me._connection.ConnectionString = Global.DataAccessTier.My.MySettings.Default.AqualocConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

@@ -12,6 +12,7 @@ Public Class FormLogin
         Dim currentUserDataRow As DataRowView = cboLogin.SelectedItem
         Dim currentUserStation As DataRowView = cboLoginStation.SelectedItem
         Dim enteredPassword As String = txtLoginPassword.Text
+
         '#todo salt and hash passwords
         If (DataEntityTier.AqualocDataSet.login(currentUserDataRow, enteredPassword)) Then
             Dim currentUserRole As String = currentUserDataRow(4)
