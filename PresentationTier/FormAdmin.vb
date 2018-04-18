@@ -4,7 +4,7 @@
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UsersTableAdapter1.Fill(Me.AqualocDataSet.Users)
-        'StationsTableAdapter.Fill(Me.AqualocDataSet.Stations)
+        StationsTableAdapter1.Fill(Me.AqualocDataSet.Stations)
         MetersTableAdapter1.Fill(Me.AqualocDataSet.Meters)
         CenterToScreen()
     End Sub
@@ -20,7 +20,7 @@
             MessageBox.Show("You must enter the number of meters to continue.")
             Exit Sub
         ElseIf newMeters = Nothing Then
-            MsgBox("Nothing")
+            MsgBox("newMeters = Nothing, Report to Ahmed")
             Exit Sub
         Else
             For newMeters1 = newMeters To 1 Step -1
@@ -36,11 +36,10 @@
                 TableAdapterManager1.UpdateAll(AqualocDataSet)
                 UseWaitCursor = False
             Catch
-                ' UseWaitCursor = False
+                'UseWaitCursor = False
             End Try
-
         End If
-        MsgBox("Done")
+        MsgBox("Meters Added")
     End Sub
 
     Private Sub MetersBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs)
@@ -49,6 +48,10 @@
         MetersBindingSource.EndEdit()
         TableAdapterManager1.UpdateAll(AqualocDataSet)
         'UseWaitCursor = False
+    End Sub
+
+    Private Sub btnCreateUser_Click(sender As Object, e As EventArgs) Handles btnCreateUser.Click
+
     End Sub
 End Class
 'Dim newrow As DataEntityTier.AqualocDataSet.UsersRow = AqualocDataSet.Users.NewUsersRow

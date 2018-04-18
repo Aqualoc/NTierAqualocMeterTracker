@@ -9,7 +9,7 @@ Public Interface IService1
     Function GetDataUsingDataContract(ByVal composite As CompositeType) As CompositeType
 
     ' TODO: Add your service operations here
-    <OperationContract()>
+	    <OperationContract()>
     Function GetMeters() As DataEntityTier.AqualocDataSet.MetersDataTable
 
     <OperationContract()>
@@ -17,6 +17,9 @@ Public Interface IService1
 
     <OperationContract()>
     Function GetStations() As DataEntityTier.AqualocDataSet.StationsDataTable
+
+    <OperationContract()>
+    Function GetMeterQCPoint() As DataEntityTier.AqualocDataSet.meterQcPointDataTable
 
 End Interface
 
