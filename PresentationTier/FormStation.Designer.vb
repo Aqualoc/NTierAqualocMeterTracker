@@ -38,9 +38,18 @@ Partial Class FormStation
         Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
         Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MetersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MeterQcPointTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.meterQcPointTableAdapter()
+        Me.MetersTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.MetersTableAdapter()
+        Me.StationsTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter()
+        Me.UsersTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter()
+        Me.TableAdapterManager1 = New DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager()
+        Me.MeterQcPointBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StationsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MetersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MeterQcPointBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StationsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonScanningPass
@@ -182,12 +191,47 @@ Partial Class FormStation
         Me.MetersBindingSource.DataMember = "Meters"
         Me.MetersBindingSource.DataSource = Me.AqualocDataSet
         '
+        'MeterQcPointTableAdapter1
+        '
+        Me.MeterQcPointTableAdapter1.ClearBeforeFill = True
+        '
+        'MetersTableAdapter1
+        '
+        Me.MetersTableAdapter1.ClearBeforeFill = True
+        '
+        'StationsTableAdapter1
+        '
+        Me.StationsTableAdapter1.ClearBeforeFill = True
+        '
+        'UsersTableAdapter1
+        '
+        Me.UsersTableAdapter1.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.meterQcPointTableAdapter = Me.MeterQcPointTableAdapter1
+        Me.TableAdapterManager1.MetersTableAdapter = Me.MetersTableAdapter1
+        Me.TableAdapterManager1.StationsTableAdapter = Me.StationsTableAdapter1
+        Me.TableAdapterManager1.UpdateOrder = DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager1.UsersTableAdapter = Me.UsersTableAdapter1
+        '
+        'MeterQcPointBindingSource
+        '
+        Me.MeterQcPointBindingSource.DataMember = "meterQcPoint"
+        Me.MeterQcPointBindingSource.DataSource = Me.AqualocDataSet
+        '
+        'StationsBindingSource
+        '
+        Me.StationsBindingSource.DataMember = "Stations"
+        Me.StationsBindingSource.DataSource = Me.AqualocDataSet
+        '
         'FormStation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(421, 539)
+        Me.ClientSize = New System.Drawing.Size(849, 647)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LblPass)
@@ -209,6 +253,8 @@ Partial Class FormStation
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MetersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MeterQcPointBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StationsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -230,4 +276,11 @@ Partial Class FormStation
     Friend WithEvents MetersBindingSource As BindingSource
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents MeterQcPointTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.meterQcPointTableAdapter
+    Friend WithEvents MetersTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.MetersTableAdapter
+    Friend WithEvents StationsTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter
+    Friend WithEvents UsersTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter
+    Friend WithEvents TableAdapterManager1 As DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents MeterQcPointBindingSource As BindingSource
+    Friend WithEvents StationsBindingSource As BindingSource
 End Class
