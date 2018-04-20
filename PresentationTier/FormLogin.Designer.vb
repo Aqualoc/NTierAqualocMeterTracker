@@ -145,19 +145,19 @@ Partial Class FormLogin
         '
         'cmbLoginCancel
         '
-        Me.cmbLoginCancel.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.cmbLoginCancel.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.cmbLoginCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbLoginCancel.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
         Me.cmbLoginCancel.Location = New System.Drawing.Point(13, 293)
         Me.cmbLoginCancel.Name = "cmbLoginCancel"
         Me.cmbLoginCancel.Size = New System.Drawing.Size(441, 34)
-        Me.cmbLoginCancel.TabIndex = 7
+        Me.cmbLoginCancel.TabIndex = 9
         Me.cmbLoginCancel.Text = "Exit"
         Me.cmbLoginCancel.UseVisualStyleBackColor = False
         '
         'cmbLoginOk
         '
-        Me.cmbLoginOk.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.cmbLoginOk.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.cmbLoginOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbLoginOk.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbLoginOk.Location = New System.Drawing.Point(13, 241)
