@@ -28,14 +28,14 @@ Partial Class FormLogin
         Me.LblLoginLog = New System.Windows.Forms.Label()
         Me.LblLoginPassword = New System.Windows.Forms.Label()
         Me.LblLoginStation = New System.Windows.Forms.Label()
-        Me.cboLogin = New System.Windows.Forms.ComboBox()
+        Me.cboUserName = New System.Windows.Forms.ComboBox()
         Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
-        Me.txtLoginPassword = New System.Windows.Forms.TextBox()
-        Me.cboLoginStation = New System.Windows.Forms.ComboBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.cboStation = New System.Windows.Forms.ComboBox()
         Me.StationsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.cmbLoginCancel = New System.Windows.Forms.Button()
-        Me.cmbLoginOk = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.btnLogin = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.UsersTableAdapter = New DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter()
         Me.TableAdapterManager = New DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager()
@@ -91,19 +91,19 @@ Partial Class FormLogin
         Me.LblLoginStation.TabIndex = 3
         Me.LblLoginStation.Text = "Station :"
         '
-        'cboLogin
+        'cboUserName
         '
-        Me.cboLogin.DataSource = Me.UsersBindingSource
-        Me.cboLogin.DisplayMember = "UserFirstName"
-        Me.cboLogin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cboLogin.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboLogin.FormattingEnabled = True
-        Me.cboLogin.Location = New System.Drawing.Point(178, 98)
-        Me.cboLogin.Name = "cboLogin"
-        Me.cboLogin.Size = New System.Drawing.Size(190, 28)
-        Me.cboLogin.TabIndex = 4
-        Me.cboLogin.ValueMember = "UserID"
+        Me.cboUserName.DataSource = Me.UsersBindingSource
+        Me.cboUserName.DisplayMember = "UserFirstName"
+        Me.cboUserName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboUserName.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cboUserName.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboUserName.FormattingEnabled = True
+        Me.cboUserName.Location = New System.Drawing.Point(178, 98)
+        Me.cboUserName.Name = "cboUserName"
+        Me.cboUserName.Size = New System.Drawing.Size(190, 28)
+        Me.cboUserName.TabIndex = 4
+        Me.cboUserName.ValueMember = "UserID"
         '
         'UsersBindingSource
         '
@@ -115,57 +115,57 @@ Partial Class FormLogin
         Me.AqualocDataSet.DataSetName = "AqualocDataSet"
         Me.AqualocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'txtLoginPassword
+        'txtPassword
         '
-        Me.txtLoginPassword.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLoginPassword.Location = New System.Drawing.Point(176, 149)
-        Me.txtLoginPassword.Name = "txtLoginPassword"
-        Me.txtLoginPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.txtLoginPassword.Size = New System.Drawing.Size(190, 27)
-        Me.txtLoginPassword.TabIndex = 5
+        Me.txtPassword.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Location = New System.Drawing.Point(176, 149)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.txtPassword.Size = New System.Drawing.Size(190, 27)
+        Me.txtPassword.TabIndex = 5
         '
-        'cboLoginStation
+        'cboStation
         '
-        Me.cboLoginStation.DataSource = Me.StationsBindingSource
-        Me.cboLoginStation.DisplayMember = "stationFunctions"
-        Me.cboLoginStation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboLoginStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cboLoginStation.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboLoginStation.FormattingEnabled = True
-        Me.cboLoginStation.Location = New System.Drawing.Point(176, 197)
-        Me.cboLoginStation.Name = "cboLoginStation"
-        Me.cboLoginStation.Size = New System.Drawing.Size(190, 28)
-        Me.cboLoginStation.TabIndex = 6
-        Me.cboLoginStation.ValueMember = "StationID"
+        Me.cboStation.DataSource = Me.StationsBindingSource
+        Me.cboStation.DisplayMember = "stationFunctions"
+        Me.cboStation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cboStation.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboStation.FormattingEnabled = True
+        Me.cboStation.Location = New System.Drawing.Point(176, 197)
+        Me.cboStation.Name = "cboStation"
+        Me.cboStation.Size = New System.Drawing.Size(190, 28)
+        Me.cboStation.TabIndex = 6
+        Me.cboStation.ValueMember = "StationID"
         '
         'StationsBindingSource
         '
         Me.StationsBindingSource.DataMember = "Stations"
         Me.StationsBindingSource.DataSource = Me.AqualocDataSet
         '
-        'cmbLoginCancel
+        'btnExit
         '
-        Me.cmbLoginCancel.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.cmbLoginCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmbLoginCancel.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
-        Me.cmbLoginCancel.Location = New System.Drawing.Point(13, 293)
-        Me.cmbLoginCancel.Name = "cmbLoginCancel"
-        Me.cmbLoginCancel.Size = New System.Drawing.Size(441, 34)
-        Me.cmbLoginCancel.TabIndex = 9
-        Me.cmbLoginCancel.Text = "Exit"
-        Me.cmbLoginCancel.UseVisualStyleBackColor = False
+        Me.btnExit.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExit.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
+        Me.btnExit.Location = New System.Drawing.Point(13, 293)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(441, 34)
+        Me.btnExit.TabIndex = 9
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.UseVisualStyleBackColor = False
         '
-        'cmbLoginOk
+        'btnLogin
         '
-        Me.cmbLoginOk.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.cmbLoginOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmbLoginOk.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbLoginOk.Location = New System.Drawing.Point(13, 241)
-        Me.cmbLoginOk.Name = "cmbLoginOk"
-        Me.cmbLoginOk.Size = New System.Drawing.Size(441, 34)
-        Me.cmbLoginOk.TabIndex = 8
-        Me.cmbLoginOk.Text = "Login"
-        Me.cmbLoginOk.UseVisualStyleBackColor = False
+        Me.btnLogin.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogin.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.Location = New System.Drawing.Point(13, 241)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.Size = New System.Drawing.Size(441, 34)
+        Me.btnLogin.TabIndex = 8
+        Me.btnLogin.Text = "Login"
+        Me.btnLogin.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
@@ -201,11 +201,11 @@ Partial Class FormLogin
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(467, 489)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.cmbLoginOk)
-        Me.Controls.Add(Me.cmbLoginCancel)
-        Me.Controls.Add(Me.cboLoginStation)
-        Me.Controls.Add(Me.txtLoginPassword)
-        Me.Controls.Add(Me.cboLogin)
+        Me.Controls.Add(Me.btnLogin)
+        Me.Controls.Add(Me.btnExit)
+        Me.Controls.Add(Me.cboStation)
+        Me.Controls.Add(Me.txtPassword)
+        Me.Controls.Add(Me.cboUserName)
         Me.Controls.Add(Me.LblLoginStation)
         Me.Controls.Add(Me.LblLoginPassword)
         Me.Controls.Add(Me.LblLoginLog)
@@ -227,11 +227,11 @@ Partial Class FormLogin
     Friend WithEvents LblLoginLog As Label
     Friend WithEvents LblLoginPassword As Label
     Friend WithEvents LblLoginStation As Label
-    Friend WithEvents cboLogin As ComboBox
-    Friend WithEvents txtLoginPassword As TextBox
-    Friend WithEvents cboLoginStation As ComboBox
-    Friend WithEvents cmbLoginCancel As Button
-    Friend WithEvents cmbLoginOk As Button
+    Friend WithEvents cboUserName As ComboBox
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents cboStation As ComboBox
+    Friend WithEvents btnExit As Button
+    Friend WithEvents btnLogin As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents AqualocDataSet As DataEntityTier.AqualocDataSet
     Friend WithEvents UsersTableAdapter As DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter

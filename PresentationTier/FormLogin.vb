@@ -9,15 +9,15 @@
                                            As Boolean
 
         If msg.WParam.ToInt32() = CInt(Keys.Enter) Then
-            cmbLoginOk.PerformClick()
+            btnLogin.PerformClick()
             Return True
         End If
         Return MyBase.ProcessCmdKey(msg, keyData)
     End Function
-    Private Sub cmbLoginOk_Click(sender As Object, e As EventArgs) Handles cmbLoginOk.Click
-        Dim currentUserDataRow As DataRowView = cboLogin.SelectedItem
-        Dim currentUserStation As DataRowView = cboLoginStation.SelectedItem
-        Dim enteredPassword As String = txtLoginPassword.Text
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        Dim currentUserDataRow As DataRowView = cboUserName.SelectedItem
+        Dim currentUserStation As DataRowView = cboStation.SelectedItem
+        Dim enteredPassword As String = txtPassword.Text
         '#todo salt and hash passwords
         If (DataEntityTier.AqualocDataSet.login(currentUserDataRow, enteredPassword)) Then
             Dim currentUserRole As String = currentUserDataRow(4)
@@ -38,7 +38,23 @@
             MsgBox("Password Incorrect, Please Try again")
         End If
     End Sub
-    Private Sub cmbLoginCancel_Click(sender As Object, e As EventArgs) Handles cmbLoginCancel.Click
+    Private Sub cmbLoginCancel_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         End
+    End Sub
+
+    Private Sub txtLoginPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+        Dim stxt As String = txtPassword.Text
+        If (stxt.Contains("@")) Then
+            If (stxt.Contains("@S")) Then
+                cboStation.SelectedValue = stxt.IndexOf("@S")
+                If (stxt.Contains("@U")) Then
+                    cboUserName.SelectedValue = 5
+                    If (stxt.Contains("@P")) Then
+                        txtPassword.Text = ""
+                        btnLogin.PerformClick()
+                    End If
+                End If
+            End If
+        End If
     End Sub
 End Class
