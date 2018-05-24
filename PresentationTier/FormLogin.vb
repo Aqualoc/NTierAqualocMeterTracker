@@ -1,9 +1,25 @@
 ﻿Public Class FormLogin
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' If Not checkVersion() Then
+        ' MsgBox("Please Update Program")
+        '  End
+        ' End If
+        Dim ersion As Version = Reflection.Assembly.GetExecutingAssembly().GetName().Version
+        lblVersion.Text = String.Format(lblVersion.Text, ersion.Major, ersion.Minor, ersion.Build, ersion.Revision)
         Me.CenterToScreen()
         Me.UsersTableAdapter.Fill(Me.AqualocDataSet.Users)
         Me.StationsTableAdapter.Fill(Me.AqualocDataSet.Stations)
     End Sub
+
+    Private Function checkVersion() As Boolean
+        'Throw New NotImplementedException()
+        'Check the programs version
+        'checkVersion min ver in database
+        'If prgver is lower than minver
+        'return true
+        'else false
+    End Function
+
     Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message,
                                            ByVal keyData As System.Windows.Forms.Keys) _
                                            As Boolean
@@ -44,14 +60,15 @@
 
     Private Sub txtLoginPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
         Dim stxt As String = txtPassword.Text
-        If (stxt.Contains("@")) Then
-            If (stxt.Contains("@S")) Then
-                cboStation.SelectedValue = stxt.IndexOf("@S")
-                If (stxt.Contains("@U")) Then
-                    cboUserName.SelectedValue = 5
-                    If (stxt.Contains("@P")) Then
-                        txtPassword.Text = ""
+        If (stxt.Contains("$")) Then
+            If (stxt.Contains("$S")) Then
+                cboStation.SelectedValue = stxt.IndexOf("$S")
+                txtPassword.Text = ""
+                If (stxt.Contains("$U")) Then
+                    cboUserName.SelectedValue = stxt.IndexOf("$S")
+                    If (stxt.Contains("$P")) Then
                         btnLogin.PerformClick()
+                        txtPassword.Text = ""
                     End If
                 End If
             End If

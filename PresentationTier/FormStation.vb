@@ -18,7 +18,7 @@ Public Class FormStation
         TextBox1.Text = currentStation(2)
         Me.CenterToScreen()
         TxtScanBox.Select()
-
+        ButtonScanningNext.Text = "Last Meter Status"
     End Sub
 
     Sub toDb(ByVal scannedMeterNumber As String, ByVal stat As Boolean)
@@ -38,14 +38,18 @@ Public Class FormStation
                 Validate()
                 TableAdapterManager1.UpdateAll(AqualocDataSet)
                 UseWaitCursor = False
+                ButtonScanningNext.BackColor = Color.Green
             Catch e As Exception
-                MsgBox("Error updating to the Databse, please contact IT" & vbNewLine & e.Message)
+                MsgBox("Error updating to the Database, please contact IT" & vbNewLine & e.Message)
                 UseWaitCursor = False
+                ButtonScanningNext.BackColor = Color.Red
             End Try
         ElseIf (rows.Count < 1) Then
             MsgBox("Meter Not found in the database")
+            ButtonScanningNext.BackColor = Color.Red
         Else
-            MsgBox("please use positive numbers only")
+            MsgBox("Please use positive numbers only")
+            ButtonScanningNext.BackColor = Color.Red
         End If
     End Sub
 
@@ -56,18 +60,18 @@ Public Class FormStation
     Private Sub TxtScanBox_TextChanged(sender As Object, e As EventArgs) Handles TxtScanBox.TextChanged
         Dim stxt As String = TxtScanBox.Text
         If (stxt.Contains("$")) Then
-            If (stxt.Contains("$C")) Then
+            If (stxt.Contains("$C$")) Then
                 TxtScanBox.Text = ""
             End If
-            If (stxt.Contains("$E")) Then
+            If (stxt.Contains("$E$")) Then
                 End
             End If
-            If (stxt.Contains("$R")) Then
+            If (stxt.Contains("$R$")) Then
                 Application.Restart()
             End If
-            If (stxt.Contains("$F")) Then
-                If (stxt.Length = 13) Then
-                    stxt = stxt.Substring(5)
+            If (stxt.Contains("$F$")) Then
+                If (stxt.Length = 11) Then
+                    stxt = stxt.Substring(3)
                     toDb(stxt, False)
                     TxtScanBox.Text = ""
                 End If

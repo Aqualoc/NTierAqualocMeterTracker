@@ -40,6 +40,7 @@ Partial Class FormLogin
         Me.UsersTableAdapter = New DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter()
         Me.TableAdapterManager = New DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager()
         Me.StationsTableAdapter = New DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter()
+        Me.lblVersion = New System.Windows.Forms.Label()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StationsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -194,12 +195,22 @@ Partial Class FormLogin
         '
         Me.StationsTableAdapter.ClearBeforeFill = True
         '
+        'lblVersion
+        '
+        Me.lblVersion.AutoSize = True
+        Me.lblVersion.Location = New System.Drawing.Point(-2, 471)
+        Me.lblVersion.Name = "lblVersion"
+        Me.lblVersion.Size = New System.Drawing.Size(113, 13)
+        Me.lblVersion.TabIndex = 12
+        Me.lblVersion.Text = "Version: {0}.{1}.{2}.{3}"
+        '
         'FormLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(467, 489)
+        Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.btnExit)
@@ -239,4 +250,5 @@ Partial Class FormLogin
     Friend WithEvents StationsTableAdapter As DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter
     Friend WithEvents UsersBindingSource As BindingSource
     Friend WithEvents StationsBindingSource As BindingSource
+    Friend WithEvents lblVersion As Label
 End Class
