@@ -1,6 +1,8 @@
 ﻿Imports DataEntityTier
 
 Public Class FormStation
+    Dim passcount As Integer = 0
+    Dim failcount As Integer = 0
     Private currentUser As DataRowView
     Private currentStation As DataRowView
 
@@ -19,6 +21,10 @@ Public Class FormStation
         Me.CenterToScreen()
         TxtScanBox.Select()
         ButtonScanningNext.Text = "Last Meter Status"
+
+        LabelPassCount.Text = "Pass Count: " & passcount
+        LabelFailCount.Text = "Fail Count: " & failcount
+
     End Sub
 
     Sub toDb(ByVal scannedMeterNumber As String, ByVal stat As Boolean)
@@ -33,24 +39,34 @@ Public Class FormStation
             newQC.qcPointPassTime = Date.Now.TimeOfDay()
             Try
                 AqualocDataSet.meterQcPoint.AddmeterQcPointRow(newQC)
+
                 MeterQcPointBindingSource.EndEdit()
                 UseWaitCursor = True
                 Validate()
                 TableAdapterManager1.UpdateAll(AqualocDataSet)
                 UseWaitCursor = False
+                If (stat) Then
+                    passcount = passcount + 1
+                    MsgBox(stat)
+                Else
+                    failcount = failcount + 1
+                End If
                 ButtonScanningNext.BackColor = Color.Green
             Catch e As Exception
                 MsgBox("Error updating to the Database, please contact IT" & vbNewLine & e.Message)
                 UseWaitCursor = False
+                AqualocDataSet.meterQcPoint.RemovemeterQcPointRow(newQC)
                 ButtonScanningNext.BackColor = Color.Red
             End Try
         ElseIf (rows.Count < 1) Then
-            MsgBox("Meter Not found in the database")
+            MsgBox("Meter not found in the database")
             ButtonScanningNext.BackColor = Color.Red
         Else
             MsgBox("Please use positive numbers only")
             ButtonScanningNext.BackColor = Color.Red
         End If
+        LabelPassCount.Text = "Pass Count: " & passcount
+        LabelFailCount.Text = "Fail Count: " & failcount
     End Sub
 
     Private Sub ButtonScanningNext_Click(sender As Object, e As EventArgs) Handles ButtonScanningNext.Click
@@ -80,6 +96,5 @@ Public Class FormStation
             toDb(stxt, True)
             TxtScanBox.Text = ""
         End If
-
     End Sub
 End Class

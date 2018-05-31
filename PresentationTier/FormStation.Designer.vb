@@ -38,8 +38,8 @@ Partial Class FormStation
         Me.TableAdapterManager1 = New DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager()
         Me.MeterQcPointBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StationsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.LabelFailCount = New System.Windows.Forms.Label()
+        Me.LabelPassCount = New System.Windows.Forms.Label()
         Me.LblPass = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -145,27 +145,27 @@ Partial Class FormStation
         Me.StationsBindingSource.DataMember = "Stations"
         Me.StationsBindingSource.DataSource = Me.AqualocDataSet
         '
-        'Label2
+        'LabelFailCount
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(233, 360)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 20)
-        Me.Label2.TabIndex = 14
-        Me.Label2.Text = "Fail Count:"
+        Me.LabelFailCount.AutoSize = True
+        Me.LabelFailCount.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelFailCount.Location = New System.Drawing.Point(233, 360)
+        Me.LabelFailCount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LabelFailCount.Name = "LabelFailCount"
+        Me.LabelFailCount.Size = New System.Drawing.Size(77, 20)
+        Me.LabelFailCount.TabIndex = 14
+        Me.LabelFailCount.Text = "Fail Count:"
         '
-        'Label3
+        'LabelPassCount
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(40, 360)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(82, 20)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Pass Count:"
+        Me.LabelPassCount.AutoSize = True
+        Me.LabelPassCount.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelPassCount.Location = New System.Drawing.Point(40, 360)
+        Me.LabelPassCount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LabelPassCount.Name = "LabelPassCount"
+        Me.LabelPassCount.Size = New System.Drawing.Size(82, 20)
+        Me.LabelPassCount.TabIndex = 15
+        Me.LabelPassCount.Text = "Pass Count:"
         '
         'LblPass
         '
@@ -206,8 +206,8 @@ Partial Class FormStation
         Me.ClientSize = New System.Drawing.Size(414, 432)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.LabelPassCount)
+        Me.Controls.Add(Me.LabelFailCount)
         Me.Controls.Add(Me.LblPass)
         Me.Controls.Add(Me.TxtScanningOperator)
         Me.Controls.Add(Me.LblScanningOperator)
@@ -246,8 +246,8 @@ Partial Class FormStation
     Friend WithEvents TableAdapterManager1 As DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager
     Friend WithEvents MeterQcPointBindingSource As BindingSource
     Friend WithEvents StationsBindingSource As BindingSource
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents LabelFailCount As Label
+    Friend WithEvents LabelPassCount As Label
     Friend WithEvents LblPass As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label

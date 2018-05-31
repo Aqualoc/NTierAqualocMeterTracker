@@ -8,7 +8,7 @@
     End Sub
 
     'Public Property stationRow As DataRowView
-    ' Public Property userRow As DataRowView
+    'Public Property userRow As DataRowView
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitializeComponent()
@@ -57,5 +57,9 @@
 
     Private Sub ButtonExit_Click(sender As Object, e As EventArgs) Handles ButtonExit.Click
         End
+    End Sub
+
+    Private Sub btnCreateUser_Click(sender As Object, e As EventArgs) Handles btnCreateUser.Click
+
     End Sub
 End Class

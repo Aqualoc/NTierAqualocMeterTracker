@@ -4,8 +4,9 @@
         ' MsgBox("Please Update Program")
         '  End
         ' End If
-        Dim ersion As Version = Reflection.Assembly.GetExecutingAssembly().GetName().Version
-        lblVersion.Text = String.Format(lblVersion.Text, ersion.Major, ersion.Minor, ersion.Build, ersion.Revision)
+
+        Dim ver As Version = Reflection.Assembly.GetExecutingAssembly().GetName().Version
+        lblVersion.Text = String.Format(lblVersion.Text, ver.Major, ver.Minor, ver.Build, ver.Revision)
         Me.CenterToScreen()
         Me.UsersTableAdapter.Fill(Me.AqualocDataSet.Users)
         Me.StationsTableAdapter.Fill(Me.AqualocDataSet.Stations)
