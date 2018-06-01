@@ -20,14 +20,14 @@ Public Class FormStation
         TextBox1.Text = currentStation(2)
         Me.CenterToScreen()
         TxtScanBox.Select()
-        ButtonScanningNext.Text = "Last Meter Status"
-
+        ButtonScanningNext.Text = "Last Meter: "
         LabelPassCount.Text = "Pass Count: " & passcount
         LabelFailCount.Text = "Fail Count: " & failcount
 
     End Sub
 
     Sub toDb(ByVal scannedMeterNumber As String, ByVal stat As Boolean)
+
         Dim rows() As AqualocDataSet.MetersRow = AqualocDataSet.Meters.Select("MeterNumber = '" & scannedMeterNumber & "'")
         If (rows.Count = 1) Then
             Dim newQC As DataEntityTier.AqualocDataSet.meterQcPointRow = AqualocDataSet.meterQcPoint.NewmeterQcPointRow
@@ -39,7 +39,6 @@ Public Class FormStation
             newQC.qcPointPassTime = Date.Now.TimeOfDay()
             Try
                 AqualocDataSet.meterQcPoint.AddmeterQcPointRow(newQC)
-
                 MeterQcPointBindingSource.EndEdit()
                 UseWaitCursor = True
                 Validate()
@@ -47,23 +46,26 @@ Public Class FormStation
                 UseWaitCursor = False
                 If (stat) Then
                     passcount = passcount + 1
-                    MsgBox(stat)
+                    'MsgBox(stat)
+                    ButtonScanningNext.BackColor = Color.Green
                 Else
                     failcount = failcount + 1
+                    ButtonScanningNext.BackColor = Color.Red
                 End If
-                ButtonScanningNext.BackColor = Color.Green
+
             Catch e As Exception
-                MsgBox("Error updating to the Database, please contact IT" & vbNewLine & e.Message)
+
+                MsgBox("Error updating to the Database, please contact IT" & vbNewLine & "DuplicateError")
                 UseWaitCursor = False
                 AqualocDataSet.meterQcPoint.RemovemeterQcPointRow(newQC)
-                ButtonScanningNext.BackColor = Color.Red
+                ButtonScanningNext.BackColor = Color.Maroon
             End Try
         ElseIf (rows.Count < 1) Then
             MsgBox("Meter not found in the database")
-            ButtonScanningNext.BackColor = Color.Red
+            ButtonScanningNext.BackColor = Color.Maroon
         Else
             MsgBox("Please use positive numbers only")
-            ButtonScanningNext.BackColor = Color.Red
+            ButtonScanningNext.BackColor = Color.Maroon
         End If
         LabelPassCount.Text = "Pass Count: " & passcount
         LabelFailCount.Text = "Fail Count: " & failcount
@@ -89,12 +91,14 @@ Public Class FormStation
                 If (stxt.Length = 11) Then
                     stxt = stxt.Substring(3)
                     toDb(stxt, False)
+                    ButtonScanningNext.Text = "Last Meter: " & stxt
                     TxtScanBox.Text = ""
                 End If
             End If
         ElseIf (stxt.Length = 8) Then
             toDb(stxt, True)
             TxtScanBox.Text = ""
+            ButtonScanningNext.Text = "Last Meter: " & stxt
         End If
     End Sub
 End Class

@@ -1,25 +1,11 @@
 ﻿Public Class FormLogin
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' If Not checkVersion() Then
-        ' MsgBox("Please Update Program")
-        '  End
-        ' End If
-
         Dim ver As Version = Reflection.Assembly.GetExecutingAssembly().GetName().Version
         lblVersion.Text = String.Format(lblVersion.Text, ver.Major, ver.Minor, ver.Build, ver.Revision)
         Me.CenterToScreen()
         Me.UsersTableAdapter.Fill(Me.AqualocDataSet.Users)
         Me.StationsTableAdapter.Fill(Me.AqualocDataSet.Stations)
     End Sub
-
-    Private Function checkVersion() As Boolean
-        'Throw New NotImplementedException()
-        'Check the programs version
-        'checkVersion min ver in database
-        'If prgver is lower than minver
-        'return true
-        'else false
-    End Function
 
     Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message,
                                            ByVal keyData As System.Windows.Forms.Keys) _
