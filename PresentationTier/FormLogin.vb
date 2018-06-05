@@ -5,6 +5,7 @@
         Me.CenterToScreen()
         Me.UsersTableAdapter.Fill(Me.AqualocDataSet.Users)
         Me.StationsTableAdapter.Fill(Me.AqualocDataSet.Stations)
+        ControlBox = False
     End Sub
 
     Protected Overrides Function ProcessCmdKey(ByRef msg As System.Windows.Forms.Message,
@@ -27,15 +28,13 @@
             Select Case currentUserRole
                 Case "A"
                     Dim FormAdmin As New FormAdmin(currentUserDataRow, currentUserStation)
-                    Visible = False
-                    FormAdmin.ShowDialog()
+                    FormAdmin.Show()
                     Me.Close()
                 Case "Q"
                 Case "C"
                     Dim FormStation As New FormStation(currentUserDataRow, currentUserStation)
-                    Visible = False
-                    FormStation.ShowDialog()
-                    Me.Dispose()
+                    FormStation.Show()
+                    Me.Close()
             End Select
         Else
             MsgBox("Password Incorrect, Please Try again")
@@ -52,7 +51,7 @@
                 cboStation.SelectedValue = stxt.IndexOf("$S")
                 txtPassword.Text = ""
                 If (stxt.Contains("$U")) Then
-                    cboUserName.SelectedValue = stxt.IndexOf("$S")
+                    cboUserName.SelectedValue = stxt.IndexOf("$U")
                     If (stxt.Contains("$P")) Then
                         btnLogin.PerformClick()
                         txtPassword.Text = ""

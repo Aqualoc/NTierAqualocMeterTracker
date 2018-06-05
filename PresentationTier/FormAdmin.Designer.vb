@@ -42,6 +42,7 @@ Partial Class FormAdmin
         Me.StationsTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter()
         Me.TableAdapterManager1 = New DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager()
         Me.FKuserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StationsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -175,7 +176,7 @@ Partial Class FormAdmin
         Me.ButtonExit.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonExit.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonExit.Location = New System.Drawing.Point(135, 331)
+        Me.ButtonExit.Location = New System.Drawing.Point(40, 331)
         Me.ButtonExit.Name = "ButtonExit"
         Me.ButtonExit.Size = New System.Drawing.Size(184, 52)
         Me.ButtonExit.TabIndex = 6
@@ -213,12 +214,25 @@ Partial Class FormAdmin
         Me.FKuserBindingSource.DataMember = "FK_user"
         Me.FKuserBindingSource.DataSource = Me.UsersBindingSource
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(263, 331)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(184, 52)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "Restart"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'FormAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(485, 415)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ButtonExit)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -231,6 +245,7 @@ Partial Class FormAdmin
         Me.Controls.Add(Me.btnCreateUser)
         Me.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "FormAdmin"
+        Me.Text = "Admin"
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StationsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -262,4 +277,5 @@ Partial Class FormAdmin
     Friend WithEvents TableAdapterManager1 As DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager
     Friend WithEvents StationsBindingSource As BindingSource
     Friend WithEvents FKuserBindingSource As BindingSource
+    Friend WithEvents Button1 As Button
 End Class

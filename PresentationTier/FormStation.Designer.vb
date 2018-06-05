@@ -221,6 +221,9 @@ Partial Class FormStation
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormStation"
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Station"
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MetersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

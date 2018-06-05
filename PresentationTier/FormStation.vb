@@ -20,10 +20,12 @@ Public Class FormStation
         TextBox1.Text = currentStation(2)
         Me.CenterToScreen()
         TxtScanBox.Select()
+        MinimizeBox = False
         ButtonScanningNext.Text = "Last Meter: "
         LabelPassCount.Text = "Pass Count: " & passcount
         LabelFailCount.Text = "Fail Count: " & failcount
-
+        ControlBox = False
+        Me.Text = "Station: " & currentStation(2)
     End Sub
 
     Sub toDb(ByVal scannedMeterNumber As String, ByVal stat As Boolean)
@@ -55,7 +57,7 @@ Public Class FormStation
 
             Catch e As Exception
 
-                MsgBox("Error updating to the Database, please contact IT" & vbNewLine & "DuplicateError")
+                MsgBox("Error: Meter Has already been scanned at this Station" & vbNewLine & "DuplicateError")
                 UseWaitCursor = False
                 AqualocDataSet.meterQcPoint.RemovemeterQcPointRow(newQC)
                 ButtonScanningNext.BackColor = Color.Maroon
@@ -94,6 +96,13 @@ Public Class FormStation
                     ButtonScanningNext.Text = "Last Meter: " & stxt
                     TxtScanBox.Text = ""
                 End If
+            End If
+            If (stxt.Contains("$O$")) Then
+                'find the record
+                'modify record
+                'output record modified
+                'git push
+
             End If
         ElseIf (stxt.Length = 8) Then
             toDb(stxt, True)

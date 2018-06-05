@@ -19,6 +19,7 @@
         btnCreateStation.Enabled = False
         btnCreateUser.Enabled = False
         btnDeleteUser.Enabled = False
+        ControlBox = False
     End Sub
 
     Private Sub btnCreateStickers_Click(sender As Object, e As EventArgs) Handles btnCreateStickers.Click
@@ -61,5 +62,9 @@
 
     Private Sub btnCreateUser_Click(sender As Object, e As EventArgs) Handles btnCreateUser.Click
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Application.Restart()
     End Sub
 End Class
