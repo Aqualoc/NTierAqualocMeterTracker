@@ -1,4 +1,6 @@
-﻿Public Class FormLogin
+﻿Imports System.Text.RegularExpressions
+
+Public Class FormLogin
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim ver As Version = Reflection.Assembly.GetExecutingAssembly().GetName().Version
         lblVersion.Text = String.Format(lblVersion.Text, ver.Major, ver.Minor, ver.Build, ver.Revision)
@@ -37,7 +39,7 @@
                     Me.Close()
             End Select
         Else
-            MsgBox("Password Incorrect, Please Try again")
+            'MsgBox("Password Incorrect, Please Try again")
         End If
     End Sub
     Private Sub cmbLoginCancel_Click(sender As Object, e As EventArgs) Handles btnExit.Click
@@ -46,18 +48,26 @@
 
     Private Sub txtLoginPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
         Dim stxt As String = txtPassword.Text
+        btnLogin.PerformClick()
         If (stxt.Contains("$")) Then
             If (stxt.Contains("$S")) Then
-                cboStation.SelectedValue = stxt.IndexOf("$S")
+                cboStation.SelectedValue = CType(betweenString(stxt, "$S", "$S"), Integer)
                 txtPassword.Text = ""
-                If (stxt.Contains("$U")) Then
-                    cboUserName.SelectedValue = stxt.IndexOf("$U")
-                    If (stxt.Contains("$P")) Then
-                        btnLogin.PerformClick()
-                        txtPassword.Text = ""
-                    End If
+            End If
+            If (stxt.Contains("$U")) Then
+                cboUserName.SelectedValue = CType(betweenString(stxt, "$U", "$U"), Integer)
+                If (stxt.Contains("$P")) Then
+                    txtPassword.Text = CType(betweenString(stxt, "$P", "$P"), Integer)
+                    btnLogin.PerformClick()
                 End If
             End If
         End If
+
     End Sub
+
+    Function betweenString(ByVal str As String, ByVal startString As String, ByVal endString As String) As String
+        Dim strFrom As Integer = str.IndexOf(startString) + startString.Length
+        Dim strTo = str.LastIndexOf(endString)
+        betweenString = str.Substring(strFrom, strTo - strFrom)
+    End Function
 End Class

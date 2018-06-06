@@ -16,6 +16,7 @@ Public Class FormStation
         UsersTableAdapter1.Fill(Me.AqualocDataSet.Users)
         StationsTableAdapter1.Fill(Me.AqualocDataSet.Stations)
         MetersTableAdapter1.Fill(Me.AqualocDataSet.Meters)
+        MeterQcPointTableAdapter1.Fill(Me.AqualocDataSet.meterQcPoint)
         TxtScanningOperator.Text = currentUser(2) & " " & currentUser(1)
         TextBox1.Text = currentStation(2)
         Me.CenterToScreen()
@@ -29,7 +30,6 @@ Public Class FormStation
     End Sub
 
     Sub toDb(ByVal scannedMeterNumber As String, ByVal stat As Boolean)
-
         Dim rows() As AqualocDataSet.MetersRow = AqualocDataSet.Meters.Select("MeterNumber = '" & scannedMeterNumber & "'")
         If (rows.Count = 1) Then
             Dim newQC As DataEntityTier.AqualocDataSet.meterQcPointRow = AqualocDataSet.meterQcPoint.NewmeterQcPointRow
@@ -54,9 +54,7 @@ Public Class FormStation
                     failcount = failcount + 1
                     ButtonScanningNext.BackColor = Color.Red
                 End If
-
             Catch e As Exception
-
                 MsgBox("Error: Meter Has already been scanned at this Station" & vbNewLine & "DuplicateError")
                 UseWaitCursor = False
                 AqualocDataSet.meterQcPoint.RemovemeterQcPointRow(newQC)
@@ -66,7 +64,7 @@ Public Class FormStation
             MsgBox("Meter not found in the database")
             ButtonScanningNext.BackColor = Color.Maroon
         Else
-            MsgBox("Please use positive numbers only")
+            MsgBox("Unknow Error, Please Report Error 01 to IT")
             ButtonScanningNext.BackColor = Color.Maroon
         End If
         LabelPassCount.Text = "Pass Count: " & passcount
@@ -99,6 +97,15 @@ Public Class FormStation
             End If
             If (stxt.Contains("$O$")) Then
                 'find the record
+
+                Dim urow As AqualocDataSet.meterQcPointRow = AqualocDataSet.meterQcPoint.FindBystationIdmeterId(1, 5142)
+                urow.qcPointPass = False
+                MeterQcPointBindingSource.EndEdit()
+                UseWaitCursor = True
+                Validate()
+                TableAdapterManager1.UpdateAll(AqualocDataSet)
+                UseWaitCursor = False
+                TxtScanBox.Text = ""
                 'modify record
                 'output record modified
                 'git push

@@ -128,7 +128,7 @@ Partial Class FormLogin
         'cboStation
         '
         Me.cboStation.DataSource = Me.StationsBindingSource
-        Me.cboStation.DisplayMember = "stationFunctions"
+        Me.cboStation.DisplayMember = "StationFunctions"
         Me.cboStation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cboStation.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

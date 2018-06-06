@@ -1,0 +1,2 @@
+SELECT stationid,userid, MeterQcPoint.meterId, MeterNumber, userID, qcPointPass, qcPointPassDate, qcPointPass
+  FROM [Aqualoc].[dbo].[MeterQcPoint] Inner join meters on MeterQcPoint.meterId = meters.MeterID
