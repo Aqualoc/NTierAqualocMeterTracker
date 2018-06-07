@@ -41,6 +41,7 @@ Public Class FormStation
             newQC.qcPointPassTime = Date.Now.TimeOfDay()
             Try
                 AqualocDataSet.meterQcPoint.AddmeterQcPointRow(newQC)
+                TxtScanBox.Text = ""
                 MeterQcPointBindingSource.EndEdit()
                 UseWaitCursor = True
                 Validate()
@@ -48,7 +49,6 @@ Public Class FormStation
                 UseWaitCursor = False
                 If (stat) Then
                     passcount = passcount + 1
-                    'MsgBox(stat)
                     ButtonScanningNext.BackColor = Color.Green
                 Else
                     failcount = failcount + 1
@@ -57,7 +57,7 @@ Public Class FormStation
             Catch e As Exception
                 MsgBox("Error: Meter Has already been scanned at this Station" & vbNewLine & "DuplicateError")
                 UseWaitCursor = False
-                AqualocDataSet.meterQcPoint.RemovemeterQcPointRow(newQC)
+                'AqualocDataSet.meterQcPoint.RemovemeterQcPointRow(newQC)
                 ButtonScanningNext.BackColor = Color.Maroon
             End Try
         ElseIf (rows.Count < 1) Then
@@ -112,8 +112,8 @@ Public Class FormStation
 
             End If
         ElseIf (stxt.Length = 8) Then
-            toDb(stxt, True)
             TxtScanBox.Text = ""
+            toDb(stxt, True)
             ButtonScanningNext.Text = "Last Meter: " & stxt
         End If
     End Sub
