@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DEV01-AHMED;Initial Catalog=Aqualoc;Persist Security Info=True;User I"& _ 
-            "D=sa;Password=root1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=AQUA-DEV1;Initial Catalog=Aqualoc;Persist Security Info=True;User ID="& _ 
+            "sa;Password=root1")>  _
         Public ReadOnly Property AqualocConnectionString() As String
             Get
                 Return CType(Me("AqualocConnectionString"),String)

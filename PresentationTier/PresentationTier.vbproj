@@ -27,7 +27,7 @@
     <InstallUrl>\\AQUA-DEV1\Users\user\Desktop\amt\</InstallUrl>
     <MinimumRequiredVersion>1.1.10.32</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>34</ApplicationRevision>
+    <ApplicationRevision>38</ApplicationRevision>
     <ApplicationVersion>1.1.10.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Class1.vb" />
     <Compile Include="FormAdmin.Designer.vb">
       <DependentUpon>FormAdmin.vb</DependentUpon>
     </Compile>

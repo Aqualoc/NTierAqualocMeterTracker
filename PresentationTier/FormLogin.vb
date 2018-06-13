@@ -57,12 +57,11 @@ Public Class FormLogin
             If (stxt.Contains("$U")) Then
                 cboUserName.SelectedValue = CType(betweenString(stxt, "$U", "$U"), Integer)
                 If (stxt.Contains("$P")) Then
-                    txtPassword.Text = CType(betweenString(stxt, "$P", "$P"), Integer)
+                    txtPassword.Text = betweenString(stxt, "$P", "$P")
                     btnLogin.PerformClick()
                 End If
             End If
         End If
-
     End Sub
 
     Function betweenString(ByVal str As String, ByVal startString As String, ByVal endString As String) As String

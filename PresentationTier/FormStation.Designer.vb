@@ -24,10 +24,10 @@ Partial Class FormStation
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormStation))
-        Me.ButtonScanningNext = New System.Windows.Forms.Button()
+        Me.ButtonScanFeedback = New System.Windows.Forms.Button()
         Me.TxtScanBox = New System.Windows.Forms.TextBox()
         Me.LblScanningOperator = New System.Windows.Forms.Label()
-        Me.TxtScanningOperator = New System.Windows.Forms.TextBox()
+        Me.TextBoxCurrentOperator = New System.Windows.Forms.TextBox()
         Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
         Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MetersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -41,7 +41,7 @@ Partial Class FormStation
         Me.LabelFailCount = New System.Windows.Forms.Label()
         Me.LabelPassCount = New System.Windows.Forms.Label()
         Me.LblPass = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxCurrentStation = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,18 +52,18 @@ Partial Class FormStation
         '
         'ButtonScanningNext
         '
-        Me.ButtonScanningNext.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ButtonScanningNext.Enabled = False
-        Me.ButtonScanningNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonScanningNext.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonScanningNext.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.ButtonScanningNext.Location = New System.Drawing.Point(13, 207)
-        Me.ButtonScanningNext.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.ButtonScanningNext.Name = "ButtonScanningNext"
-        Me.ButtonScanningNext.Size = New System.Drawing.Size(383, 110)
-        Me.ButtonScanningNext.TabIndex = 4
-        Me.ButtonScanningNext.Text = "Finish"
-        Me.ButtonScanningNext.UseVisualStyleBackColor = False
+        Me.ButtonScanFeedback.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ButtonScanFeedback.Enabled = False
+        Me.ButtonScanFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonScanFeedback.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonScanFeedback.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.ButtonScanFeedback.Location = New System.Drawing.Point(13, 207)
+        Me.ButtonScanFeedback.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ButtonScanFeedback.Name = "ButtonScanningNext"
+        Me.ButtonScanFeedback.Size = New System.Drawing.Size(383, 110)
+        Me.ButtonScanFeedback.TabIndex = 4
+        Me.ButtonScanFeedback.Text = "Finish"
+        Me.ButtonScanFeedback.UseVisualStyleBackColor = False
         '
         'TxtScanBox
         '
@@ -87,13 +87,13 @@ Partial Class FormStation
         '
         'TxtScanningOperator
         '
-        Me.TxtScanningOperator.Enabled = False
-        Me.TxtScanningOperator.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtScanningOperator.Location = New System.Drawing.Point(206, 55)
-        Me.TxtScanningOperator.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TxtScanningOperator.Name = "TxtScanningOperator"
-        Me.TxtScanningOperator.Size = New System.Drawing.Size(132, 22)
-        Me.TxtScanningOperator.TabIndex = 8
+        Me.TextBoxCurrentOperator.Enabled = False
+        Me.TextBoxCurrentOperator.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCurrentOperator.Location = New System.Drawing.Point(206, 55)
+        Me.TextBoxCurrentOperator.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBoxCurrentOperator.Name = "TxtScanningOperator"
+        Me.TextBoxCurrentOperator.Size = New System.Drawing.Size(132, 22)
+        Me.TextBoxCurrentOperator.TabIndex = 8
         '
         'AqualocDataSet
         '
@@ -179,13 +179,13 @@ Partial Class FormStation
         '
         'TextBox1
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(206, 101)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(132, 22)
-        Me.TextBox1.TabIndex = 17
+        Me.TextBoxCurrentStation.Enabled = False
+        Me.TextBoxCurrentStation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCurrentStation.Location = New System.Drawing.Point(206, 101)
+        Me.TextBoxCurrentStation.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBoxCurrentStation.Name = "TextBox1"
+        Me.TextBoxCurrentStation.Size = New System.Drawing.Size(132, 22)
+        Me.TextBoxCurrentStation.TabIndex = 17
         '
         'Label1
         '
@@ -204,15 +204,15 @@ Partial Class FormStation
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(414, 432)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TextBoxCurrentStation)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LabelPassCount)
         Me.Controls.Add(Me.LabelFailCount)
         Me.Controls.Add(Me.LblPass)
-        Me.Controls.Add(Me.TxtScanningOperator)
+        Me.Controls.Add(Me.TextBoxCurrentOperator)
         Me.Controls.Add(Me.LblScanningOperator)
         Me.Controls.Add(Me.TxtScanBox)
-        Me.Controls.Add(Me.ButtonScanningNext)
+        Me.Controls.Add(Me.ButtonScanFeedback)
         Me.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -233,10 +233,10 @@ Partial Class FormStation
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents ButtonScanningNext As Button
+    Friend WithEvents ButtonScanFeedback As Button
     Friend WithEvents TxtScanBox As TextBox
     Friend WithEvents LblScanningOperator As Label
-    Friend WithEvents TxtScanningOperator As TextBox
+    Friend WithEvents TextBoxCurrentOperator As TextBox
     Friend WithEvents AqualocDataSet As DataEntityTier.AqualocDataSet
     Friend WithEvents UsersBindingSource As BindingSource
     Friend WithEvents MetersBindingSource As BindingSource
@@ -252,6 +252,6 @@ Partial Class FormStation
     Friend WithEvents LabelFailCount As Label
     Friend WithEvents LabelPassCount As Label
     Friend WithEvents LblPass As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBoxCurrentStation As TextBox
     Friend WithEvents Label1 As Label
 End Class
