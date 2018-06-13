@@ -50,7 +50,7 @@ Partial Class FormStation
         CType(Me.StationsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ButtonScanningNext
+        'ButtonScanFeedback
         '
         Me.ButtonScanFeedback.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ButtonScanFeedback.Enabled = False
@@ -59,10 +59,9 @@ Partial Class FormStation
         Me.ButtonScanFeedback.ForeColor = System.Drawing.SystemColors.ControlText
         Me.ButtonScanFeedback.Location = New System.Drawing.Point(13, 207)
         Me.ButtonScanFeedback.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.ButtonScanFeedback.Name = "ButtonScanningNext"
+        Me.ButtonScanFeedback.Name = "ButtonScanFeedback"
         Me.ButtonScanFeedback.Size = New System.Drawing.Size(383, 110)
         Me.ButtonScanFeedback.TabIndex = 4
-        Me.ButtonScanFeedback.Text = "Finish"
         Me.ButtonScanFeedback.UseVisualStyleBackColor = False
         '
         'TxtScanBox
@@ -85,13 +84,13 @@ Partial Class FormStation
         Me.LblScanningOperator.TabIndex = 7
         Me.LblScanningOperator.Text = "Operator:"
         '
-        'TxtScanningOperator
+        'TextBoxCurrentOperator
         '
         Me.TextBoxCurrentOperator.Enabled = False
         Me.TextBoxCurrentOperator.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxCurrentOperator.Location = New System.Drawing.Point(206, 55)
         Me.TextBoxCurrentOperator.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBoxCurrentOperator.Name = "TxtScanningOperator"
+        Me.TextBoxCurrentOperator.Name = "TextBoxCurrentOperator"
         Me.TextBoxCurrentOperator.Size = New System.Drawing.Size(132, 22)
         Me.TextBoxCurrentOperator.TabIndex = 8
         '
@@ -152,9 +151,8 @@ Partial Class FormStation
         Me.LabelFailCount.Location = New System.Drawing.Point(233, 360)
         Me.LabelFailCount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelFailCount.Name = "LabelFailCount"
-        Me.LabelFailCount.Size = New System.Drawing.Size(77, 20)
+        Me.LabelFailCount.Size = New System.Drawing.Size(0, 20)
         Me.LabelFailCount.TabIndex = 14
-        Me.LabelFailCount.Text = "Fail Count:"
         '
         'LabelPassCount
         '
@@ -163,9 +161,8 @@ Partial Class FormStation
         Me.LabelPassCount.Location = New System.Drawing.Point(40, 360)
         Me.LabelPassCount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelPassCount.Name = "LabelPassCount"
-        Me.LabelPassCount.Size = New System.Drawing.Size(82, 20)
+        Me.LabelPassCount.Size = New System.Drawing.Size(0, 20)
         Me.LabelPassCount.TabIndex = 15
-        Me.LabelPassCount.Text = "Pass Count:"
         '
         'LblPass
         '
@@ -177,13 +174,13 @@ Partial Class FormStation
         Me.LblPass.Size = New System.Drawing.Size(0, 20)
         Me.LblPass.TabIndex = 13
         '
-        'TextBox1
+        'TextBoxCurrentStation
         '
         Me.TextBoxCurrentStation.Enabled = False
         Me.TextBoxCurrentStation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxCurrentStation.Location = New System.Drawing.Point(206, 101)
         Me.TextBoxCurrentStation.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBoxCurrentStation.Name = "TextBox1"
+        Me.TextBoxCurrentStation.Name = "TextBoxCurrentStation"
         Me.TextBoxCurrentStation.Size = New System.Drawing.Size(132, 22)
         Me.TextBoxCurrentStation.TabIndex = 17
         '

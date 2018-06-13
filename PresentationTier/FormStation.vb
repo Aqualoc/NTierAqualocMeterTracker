@@ -28,10 +28,10 @@ Public Class FormStation
         InitializeComponent()
 
         'Intialize Dataset
-        UsersTableAdapter1.Fill(Me.AqualocDataSet.Users)
-        StationsTableAdapter1.Fill(Me.AqualocDataSet.Stations)
-        MetersTableAdapter1.Fill(Me.AqualocDataSet.Meters)
-        MeterQcPointTableAdapter1.Fill(Me.AqualocDataSet.meterQcPoint)
+        UsersTableAdapter1.Fill(AqualocDataSet.Users)
+        StationsTableAdapter1.Fill(AqualocDataSet.Stations)
+        MetersTableAdapter1.Fill(AqualocDataSet.Meters)
+        MeterQcPointTableAdapter1.Fill(AqualocDataSet.meterQcPoint)
 
         TextBoxCurrentOperator.Text = currentUser(2) & " " & currentUser(1)
         TextBoxCurrentStation.Text = currentStation(2)
@@ -46,7 +46,6 @@ Public Class FormStation
         ButtonScanFeedback.BackColor = DefaultBackColor 'fix up later effected no one ever
 
     End Sub
-
 
     Private Sub TxtScanBox_TextChanged(sender As Object, e As EventArgs) Handles TxtScanBox.TextChanged
         Dim scannedTxt As String = TxtScanBox.Text
@@ -75,25 +74,23 @@ Public Class FormStation
             If (scannedTxt.Contains(strOverrideFail) And scannedTxt.Length = strOverrideFail.Length + meterLength) Then
                 'OVERRIDE FAIL
                 scannedTxt = scannedTxt.Replace(strOverrideFail, "")
-                If overrride(scannedTxt, False) Then
+                If override(scannedTxt, False) Then
+                    failOverride.count = fail.count + 1
                     ButtonScanFeedback.Text = "Last Fail Override: " & scannedTxt
-                    MsgBox("Override " & scannedTxt)
-                    ButtonScanFeedback.BackColor = Color.DarkRed
                 End If
                 TxtScanBox.Text = ""
             End If
             If (scannedTxt.Contains(strOverridePass) And scannedTxt.Length = strOverridePass.Length + meterLength) Then
+                'OVERRIDE PASS
                 scannedTxt = scannedTxt.Replace(strOverridePass, "")
-                If overrride(scannedTxt, True) Then
-                    ButtonScanFeedback.Text = "Last Pass Override: " & scannedTxt
-                    MsgBox("Override " & scannedTxt)
-                    ButtonScanFeedback.BackColor = Color.DarkGreen
+                If override(scannedTxt, True) Then
+                    passOverride.count = passOverride.count + 1
                 End If
                 TxtScanBox.Text = ""
             End If
         ElseIf (scannedTxt.Length = meterLength) Then
+            'PASS
             If toDb(scannedTxt, True) Then
-                'PASS
                 pass.count = pass.count + 1
                 ButtonScanFeedback.Text = "Last Meter: " & scannedTxt
             Else
@@ -122,18 +119,10 @@ Public Class FormStation
     Private Function toDb(ByVal scannedMeterNumber As String, ByVal stat As Boolean) As Boolean
         Dim result As AqualocDataSet.MetersRow = getMeterRowFromMeterNumber(scannedMeterNumber)
         If (result IsNot Nothing) Then
-            Dim newQC As DataEntityTier.AqualocDataSet.meterQcPointRow = AqualocDataSet.meterQcPoint.NewmeterQcPointRow
-            newQC.stationId = currentStation(0)
-            newQC.meterId = result.MeterID
-            newQC.userID = currentUser(0)
-            newQC.qcPointPass = stat
-            newQC.qcPointPassDate = Now
-            newQC.qcPointPassTime = Date.Now.TimeOfDay()
+            Dim newQC As AqualocDataSet.meterQcPointRow = AqualocDataSet.meterQcPoint.NewmeterQcPointRow
+            newQC = addData(stat, result.MeterID, newQC)
             Try
-                AqualocDataSet.meterQcPoint.AddmeterQcPointRow(newQC)
-                MeterQcPointBindingSource.EndEdit()
-                Validate()
-                TableAdapterManager1.UpdateAll(AqualocDataSet)
+                push(newQC)
                 Return True
             Catch e As Exception
                 Return False
@@ -142,14 +131,29 @@ Public Class FormStation
         Return False
     End Function
 
-    Private Function overrride(ByVal scannedMeterNumber As String, ByVal stat As Boolean) As Boolean
+    Private Sub push(newQC As AqualocDataSet.meterQcPointRow)
+        AqualocDataSet.meterQcPoint.AddmeterQcPointRow(newQC)
+        MeterQcPointBindingSource.EndEdit()
+        Validate()
+        TableAdapterManager1.UpdateAll(AqualocDataSet)
+    End Sub
+
+    Private Function addData(stat As Boolean, MeterID As String, newQC As AqualocDataSet.meterQcPointRow) As AqualocDataSet.meterQcPointRow
+        newQC.stationId = currentStation(0)
+        newQC.meterId = MeterID
+        newQC.userID = currentUser(0)
+        newQC.qcPointPass = stat
+        newQC.qcPointPassDate = Now
+        newQC.qcPointPassTime = Date.Now.TimeOfDay() 'change db to datetime
+        Return newQC
+    End Function
+
+    Private Function override(ByVal scannedMeterNumber As String, ByVal stat As Boolean) As Boolean
         Dim meterNo As AqualocDataSet.MetersRow = getMeterRowFromMeterNumber(scannedMeterNumber)
         If (meterNo IsNot Nothing) Then
             Dim urow As AqualocDataSet.meterQcPointRow = AqualocDataSet.meterQcPoint.FindBystationIdmeterId(currentStation(0), meterNo.MeterID)
-            urow.qcPointPass = False
-            MeterQcPointBindingSource.EndEdit()
-            Validate()
-            TableAdapterManager1.UpdateAll(AqualocDataSet)
+            urow.qcPointPass = stat
+            push(urow)
             Return True
         Else
             MsgBox("Could Not Override " & scannedMeterNumber)
@@ -169,10 +173,11 @@ Public Class FormStation
     End Sub
 
     Private Sub passOverrideChanged(ByVal NewValue As Integer) Handles passOverride.countChanged
-
+        ButtonScanFeedback.BackColor = Color.DarkGreen
     End Sub
 
     Private Sub failOverrideChanged(ByVal NewValue As Integer) Handles passOverride.countChanged
-
+        ButtonScanFeedback.BackColor = Color.DarkRed
     End Sub
+
 End Class
