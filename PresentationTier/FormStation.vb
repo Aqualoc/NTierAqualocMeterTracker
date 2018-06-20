@@ -48,7 +48,8 @@ Public Class FormStation
     End Sub
 
     Private Sub TxtScanBox_TextChanged(sender As Object, e As EventArgs) Handles TxtScanBox.TextChanged
-        Dim scannedTxt As String = TxtScanBox.Text
+        Dim scannedTxt As String = TxtScanBox.Text.Split(",")(0)
+
         If (scannedTxt.Contains("$")) Then
             If (scannedTxt.Contains(strClear)) Then
                 TxtScanBox.Text = ""
