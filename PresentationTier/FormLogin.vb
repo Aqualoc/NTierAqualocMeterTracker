@@ -33,6 +33,7 @@ Public Class FormLogin
                     FormAdmin.Show()
                     Me.Close()
                 Case "Q"
+
                 Case "C"
                     Dim FormStation As New FormStation(currentUserDataRow, currentUserStation)
                     FormStation.Show()
