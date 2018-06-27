@@ -185,8 +185,8 @@ Partial Class FormLogin
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.meterQcPointTableAdapter = Nothing
-        Me.TableAdapterManager.MetersTableAdapter = Nothing
+        Me.TableAdapterManager.PartQcPointTableAdapter = Nothing
+        Me.TableAdapterManager.PartTableAdapter = Nothing
         Me.TableAdapterManager.StationsTableAdapter = Me.StationsTableAdapter
         Me.TableAdapterManager.UpdateOrder = DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsersTableAdapter = Me.UsersTableAdapter

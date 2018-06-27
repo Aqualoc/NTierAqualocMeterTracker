@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormQc
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormQc
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormQc))
@@ -39,10 +39,10 @@ Partial Class FormQc
         Me.txtQcBarcode = New System.Windows.Forms.TextBox()
         Me.txtQcBatch = New System.Windows.Forms.TextBox()
         Me.txtQcDate = New System.Windows.Forms.TextBox()
-        Me.MetersTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.MetersTableAdapter()
+        Me.PartsTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.PartTableAdapter()
         Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
-        Me.MetersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MetersBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.PartsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PartsBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
@@ -54,17 +54,17 @@ Partial Class FormQc
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.MetersBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.MetersDataGridView = New System.Windows.Forms.DataGridView()
+        Me.PartsBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.PartsDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MetersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MetersBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MetersBindingNavigator.SuspendLayout()
-        CType(Me.MetersDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PartsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PartsBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PartsBindingNavigator.SuspendLayout()
+        CType(Me.PartsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LblStation
@@ -202,37 +202,37 @@ Partial Class FormQc
         Me.txtQcDate.Size = New System.Drawing.Size(112, 20)
         Me.txtQcDate.TabIndex = 14
         '
-        'MetersTableAdapter1
+        'PartsTableAdapter1
         '
-        Me.MetersTableAdapter1.ClearBeforeFill = True
+        Me.PartsTableAdapter1.ClearBeforeFill = True
         '
         'AqualocDataSet
         '
         Me.AqualocDataSet.DataSetName = "AqualocDataSet"
         Me.AqualocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'MetersBindingSource
+        'PartsBindingSource
         '
-        Me.MetersBindingSource.DataMember = "Meters"
-        Me.MetersBindingSource.DataSource = Me.AqualocDataSet
+        Me.PartsBindingSource.DataMember = "Parts"
+        Me.PartsBindingSource.DataSource = Me.AqualocDataSet
         '
-        'MetersBindingNavigator
+        'PartsBindingNavigator
         '
-        Me.MetersBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.MetersBindingNavigator.BindingSource = Me.MetersBindingSource
-        Me.MetersBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.MetersBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.MetersBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.MetersBindingNavigatorSaveItem})
-        Me.MetersBindingNavigator.Location = New System.Drawing.Point(0, 0)
-        Me.MetersBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.MetersBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.MetersBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.MetersBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.MetersBindingNavigator.Name = "MetersBindingNavigator"
-        Me.MetersBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.MetersBindingNavigator.Size = New System.Drawing.Size(560, 25)
-        Me.MetersBindingNavigator.TabIndex = 15
-        Me.MetersBindingNavigator.Text = "BindingNavigator1"
+        Me.PartsBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
+        Me.PartsBindingNavigator.BindingSource = Me.PartsBindingSource
+        Me.PartsBindingNavigator.CountItem = Me.BindingNavigatorCountItem
+        Me.PartsBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
+        Me.PartsBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.PartsBindingNavigatorSaveItem})
+        Me.PartsBindingNavigator.Location = New System.Drawing.Point(0, 0)
+        Me.PartsBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
+        Me.PartsBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
+        Me.PartsBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
+        Me.PartsBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
+        Me.PartsBindingNavigator.Name = "PartsBindingNavigator"
+        Me.PartsBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
+        Me.PartsBindingNavigator.Size = New System.Drawing.Size(560, 25)
+        Me.PartsBindingNavigator.TabIndex = 15
+        Me.PartsBindingNavigator.Text = "BindingNavigator1"
         '
         'BindingNavigatorAddNewItem
         '
@@ -319,25 +319,25 @@ Partial Class FormQc
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
-        'MetersBindingNavigatorSaveItem
+        'PartsBindingNavigatorSaveItem
         '
-        Me.MetersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.MetersBindingNavigatorSaveItem.Enabled = False
-        Me.MetersBindingNavigatorSaveItem.Image = CType(resources.GetObject("MetersBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.MetersBindingNavigatorSaveItem.Name = "MetersBindingNavigatorSaveItem"
-        Me.MetersBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
-        Me.MetersBindingNavigatorSaveItem.Text = "Save Data"
+        Me.PartsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.PartsBindingNavigatorSaveItem.Enabled = False
+        Me.PartsBindingNavigatorSaveItem.Image = CType(resources.GetObject("PartsBindingNavigatorSaveItem.Image"), System.Drawing.Image)
+        Me.PartsBindingNavigatorSaveItem.Name = "PartsBindingNavigatorSaveItem"
+        Me.PartsBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
+        Me.PartsBindingNavigatorSaveItem.Text = "Save Data"
         '
-        'MetersDataGridView
+        'PartsDataGridView
         '
-        Me.MetersDataGridView.AutoGenerateColumns = False
-        Me.MetersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetersDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
-        Me.MetersDataGridView.DataSource = Me.MetersBindingSource
-        Me.MetersDataGridView.Location = New System.Drawing.Point(672, 156)
-        Me.MetersDataGridView.Name = "MetersDataGridView"
-        Me.MetersDataGridView.Size = New System.Drawing.Size(300, 220)
-        Me.MetersDataGridView.TabIndex = 16
+        Me.PartsDataGridView.AutoGenerateColumns = False
+        Me.PartsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.PartsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
+        Me.PartsDataGridView.DataSource = Me.PartsBindingSource
+        Me.PartsDataGridView.Location = New System.Drawing.Point(672, 156)
+        Me.PartsDataGridView.Name = "PartsDataGridView"
+        Me.PartsDataGridView.Size = New System.Drawing.Size(300, 220)
+        Me.PartsDataGridView.TabIndex = 16
         '
         'DataGridViewTextBoxColumn1
         '
@@ -370,8 +370,8 @@ Partial Class FormQc
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(560, 396)
-        Me.Controls.Add(Me.MetersBindingNavigator)
-        Me.Controls.Add(Me.MetersDataGridView)
+        Me.Controls.Add(Me.PartsBindingNavigator)
+        Me.Controls.Add(Me.PartsDataGridView)
         Me.Controls.Add(Me.txtQcDate)
         Me.Controls.Add(Me.txtQcBatch)
         Me.Controls.Add(Me.txtQcBarcode)
@@ -390,11 +390,11 @@ Partial Class FormQc
         Me.Name = "FormQc"
         Me.Text = "FormQC"
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MetersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MetersBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MetersBindingNavigator.ResumeLayout(False)
-        Me.MetersBindingNavigator.PerformLayout()
-        CType(Me.MetersDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PartsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PartsBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PartsBindingNavigator.ResumeLayout(False)
+        Me.PartsBindingNavigator.PerformLayout()
+        CType(Me.PartsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -415,10 +415,10 @@ Partial Class FormQc
     Friend WithEvents txtQcBarcode As TextBox
     Friend WithEvents txtQcBatch As TextBox
     Friend WithEvents txtQcDate As TextBox
-    Friend WithEvents MetersTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.MetersTableAdapter
+    Friend WithEvents PartsTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.PartTableAdapter
     Friend WithEvents AqualocDataSet As DataEntityTier.AqualocDataSet
-    Friend WithEvents MetersBindingSource As BindingSource
-    Friend WithEvents MetersBindingNavigator As BindingNavigator
+    Friend WithEvents PartsBindingSource As BindingSource
+    Friend WithEvents PartsBindingNavigator As BindingNavigator
     Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
     Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
     Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
@@ -430,8 +430,8 @@ Partial Class FormQc
     Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents MetersBindingNavigatorSaveItem As ToolStripButton
-    Friend WithEvents MetersDataGridView As DataGridView
+    Friend WithEvents PartsBindingNavigatorSaveItem As ToolStripButton
+    Friend WithEvents PartsDataGridView As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn

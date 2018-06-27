@@ -95,6 +95,12 @@ Namespace ServiceReference1
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction:="http://tempuri.org/IService1/GetDataUsingDataContractResponse")>  _
         Function GetDataUsingDataContractAsync(ByVal composite As ServiceReference1.CompositeType) As System.Threading.Tasks.Task(Of ServiceReference1.CompositeType)
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetParts", ReplyAction:="http://tempuri.org/IService1/GetPartsResponse")>  _
+        Function GetParts() As DataEntityTier.AqualocDataSet.PartDataTable
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetParts", ReplyAction:="http://tempuri.org/IService1/GetPartsResponse")>  _
+        Function GetPartsAsync() As System.Threading.Tasks.Task(Of DataEntityTier.AqualocDataSet.PartDataTable)
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetUsers", ReplyAction:="http://tempuri.org/IService1/GetUsersResponse")>  _
         Function GetUsers() As DataEntityTier.AqualocDataSet.UsersDataTable
         
@@ -106,6 +112,12 @@ Namespace ServiceReference1
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetStations", ReplyAction:="http://tempuri.org/IService1/GetStationsResponse")>  _
         Function GetStationsAsync() As System.Threading.Tasks.Task(Of DataEntityTier.AqualocDataSet.StationsDataTable)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetMeterQCPoint", ReplyAction:="http://tempuri.org/IService1/GetMeterQCPointResponse")>  _
+        Function GetMeterQCPoint() As DataEntityTier.AqualocDataSet.PartQcPointDataTable
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IService1/GetMeterQCPoint", ReplyAction:="http://tempuri.org/IService1/GetMeterQCPointResponse")>  _
+        Function GetMeterQCPointAsync() As System.Threading.Tasks.Task(Of DataEntityTier.AqualocDataSet.PartQcPointDataTable)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -155,6 +167,14 @@ Namespace ServiceReference1
             Return MyBase.Channel.GetDataUsingDataContractAsync(composite)
         End Function
         
+        Public Function GetParts() As DataEntityTier.AqualocDataSet.PartDataTable Implements ServiceReference1.IService1.GetParts
+            Return MyBase.Channel.GetParts
+        End Function
+        
+        Public Function GetPartsAsync() As System.Threading.Tasks.Task(Of DataEntityTier.AqualocDataSet.PartDataTable) Implements ServiceReference1.IService1.GetPartsAsync
+            Return MyBase.Channel.GetPartsAsync
+        End Function
+        
         Public Function GetUsers() As DataEntityTier.AqualocDataSet.UsersDataTable Implements ServiceReference1.IService1.GetUsers
             Return MyBase.Channel.GetUsers
         End Function
@@ -169,6 +189,14 @@ Namespace ServiceReference1
         
         Public Function GetStationsAsync() As System.Threading.Tasks.Task(Of DataEntityTier.AqualocDataSet.StationsDataTable) Implements ServiceReference1.IService1.GetStationsAsync
             Return MyBase.Channel.GetStationsAsync
+        End Function
+        
+        Public Function GetMeterQCPoint() As DataEntityTier.AqualocDataSet.PartQcPointDataTable Implements ServiceReference1.IService1.GetMeterQCPoint
+            Return MyBase.Channel.GetMeterQCPoint
+        End Function
+        
+        Public Function GetMeterQCPointAsync() As System.Threading.Tasks.Task(Of DataEntityTier.AqualocDataSet.PartQcPointDataTable) Implements ServiceReference1.IService1.GetMeterQCPointAsync
+            Return MyBase.Channel.GetMeterQCPointAsync
         End Function
     End Class
 End Namespace

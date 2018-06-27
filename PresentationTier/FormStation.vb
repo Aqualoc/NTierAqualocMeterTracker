@@ -11,7 +11,7 @@ Public Class FormStation
     Dim strFail As String = "$F$"
     Dim strOverrideFail As String = "$OF$"
     Dim strOverridePass As String = "$OP$"
-    Dim meterLength As Integer = 8
+    Dim PartLength As Integer = 8
 
     Private WithEvents pass As New Counter
     Private WithEvents fail As New Counter
@@ -30,8 +30,8 @@ Public Class FormStation
         'Intialize Dataset
         UsersTableAdapter1.Fill(AqualocDataSet.Users)
         StationsTableAdapter1.Fill(AqualocDataSet.Stations)
-        MetersTableAdapter1.Fill(AqualocDataSet.Meters)
-        MeterQcPointTableAdapter1.Fill(AqualocDataSet.meterQcPoint)
+        PartTableAdapter1.Fill(AqualocDataSet.Part)
+        PartQcPointTableAdapter1.Fill(AqualocDataSet.PartQcPoint)
 
         TextBoxCurrentOperator.Text = currentUser(2) & " " & currentUser(1)
         TextBoxCurrentStation.Text = currentStation(2)
@@ -60,19 +60,19 @@ Public Class FormStation
             If (scannedTxt.Contains(strRestart)) Then
                 Application.Restart()
             End If
-            If (scannedTxt.Contains(strFail) And scannedTxt.Length = strFail.Length + meterLength) Then
+            If (scannedTxt.Contains(strFail) And scannedTxt.Length = strFail.Length + PartLength) Then
                 'FAIL
                 scannedTxt = scannedTxt.Replace(strFail, "")
                 If (toDb(scannedTxt, False)) Then
-                    ButtonScanFeedback.Text = "Last Meter: " & scannedTxt
+                    ButtonScanFeedback.Text = "Last Part: " & scannedTxt
                     fail.count = fail.count + 1
                 Else
-                    MsgBox("Error: Meter Has already been scanned at this Station" & vbNewLine & "DuplicateError")
+                    MsgBox("Error: Part Has already been scanned at this Station" & vbNewLine & "DuplicateError")
                     ButtonScanFeedback.BackColor = Color.Maroon
                 End If
                 TxtScanBox.Text = ""
             End If
-            If (scannedTxt.Contains(strOverrideFail) And scannedTxt.Length = strOverrideFail.Length + meterLength) Then
+            If (scannedTxt.Contains(strOverrideFail) And scannedTxt.Length = strOverrideFail.Length + PartLength) Then
                 'OVERRIDE FAIL
                 scannedTxt = scannedTxt.Replace(strOverrideFail, "")
                 If override(scannedTxt, False) Then
@@ -81,7 +81,7 @@ Public Class FormStation
                 End If
                 TxtScanBox.Text = ""
             End If
-            If (scannedTxt.Contains(strOverridePass) And scannedTxt.Length = strOverridePass.Length + meterLength) Then
+            If (scannedTxt.Contains(strOverridePass) And scannedTxt.Length = strOverridePass.Length + PartLength) Then
                 'OVERRIDE PASS
                 scannedTxt = scannedTxt.Replace(strOverridePass, "")
                 If override(scannedTxt, True) Then
@@ -89,39 +89,39 @@ Public Class FormStation
                 End If
                 TxtScanBox.Text = ""
             End If
-        ElseIf (scannedTxt.Length = meterLength) Then
+        ElseIf (scannedTxt.Length = PartLength) Then
             'PASS
             If toDb(scannedTxt, True) Then
                 pass.count = pass.count + 1
-                ButtonScanFeedback.Text = "Last Meter: " & scannedTxt
+                ButtonScanFeedback.Text = "Last Part: " & scannedTxt
             Else
-                MsgBox("Error: Meter Has already been scanned at this Station" & vbNewLine & "DuplicateError")
+                MsgBox("Error: Part Has already been scanned at this Station" & vbNewLine & "DuplicateError")
                 ButtonScanFeedback.BackColor = Color.Maroon
             End If
             TxtScanBox.Text = ""
         End If
     End Sub
 
-    Private Function getMeterRowFromMeterNumber(ByVal meternumber As String) As AqualocDataSet.MetersRow
-        Dim result() As AqualocDataSet.MetersRow = AqualocDataSet.Meters.Select("MeterNumber = '" & meternumber & "'")
+    Private Function getPartRowFromPartNumber(ByVal Partnumber As String) As AqualocDataSet.PartRow
+        Dim result() As AqualocDataSet.PartRow = AqualocDataSet.Part.Select("PartNumber = '" & Partnumber & "'")
         If result.Count = 1 Then
             Return result(0)
         ElseIf result.Count > 1 Then
             Return result(0)
-            MsgBox("More than one result found for getMeterID() : " & meternumber & ". Please report error 3 to IT")
+            MsgBox("More than one result found for getPartID() : " & Partnumber & ". Please report error 3 to IT")
         ElseIf result.Count = 0 Then
-            MsgBox("Meter: " & meternumber & " not found in the Database")
+            MsgBox("Part: " & Partnumber & " not found in the Database")
         Else
-            MsgBox("Unknown Error for getMeterID() :" & meternumber & ". Please Report error 4 to IT")
+            MsgBox("Unknown Error for getPartID() :" & Partnumber & ". Please Report error 4 to IT")
         End If
         Return Nothing
     End Function
 
-    Private Function toDb(ByVal scannedMeterNumber As String, ByVal stat As Boolean) As Boolean
-        Dim result As AqualocDataSet.MetersRow = getMeterRowFromMeterNumber(scannedMeterNumber)
+    Private Function toDb(ByVal scannedPartNumber As String, ByVal stat As Boolean) As Boolean
+        Dim result As AqualocDataSet.PartRow = getPartRowFromPartNumber(scannedPartNumber)
         If (result IsNot Nothing) Then
-            Dim newQC As AqualocDataSet.meterQcPointRow = AqualocDataSet.meterQcPoint.NewmeterQcPointRow
-            newQC = addData(stat, result.MeterID, newQC)
+            Dim newQC As AqualocDataSet.PartQcPointRow = AqualocDataSet.PartQcPoint.NewPartQcPointRow
+            newQC = addData(stat, result.PartID, newQC)
             Try
                 push(newQC)
                 Return True
@@ -132,16 +132,16 @@ Public Class FormStation
         Return False
     End Function
 
-    Private Sub push(newQC As AqualocDataSet.meterQcPointRow)
-        AqualocDataSet.meterQcPoint.AddmeterQcPointRow(newQC)
-        MeterQcPointBindingSource.EndEdit()
+    Private Sub push(newQC As AqualocDataSet.PartQcPointRow)
+        AqualocDataSet.PartQcPoint.AddPartQcPointRow(newQC)
+        PartQcPointBindingSource.EndEdit()
         Validate()
         TableAdapterManager1.UpdateAll(AqualocDataSet)
     End Sub
 
-    Private Function addData(stat As Boolean, MeterID As String, newQC As AqualocDataSet.meterQcPointRow) As AqualocDataSet.meterQcPointRow
+    Private Function addData(stat As Boolean, PartID As String, newQC As AqualocDataSet.PartQcPointRow) As AqualocDataSet.PartQcPointRow
         newQC.stationId = currentStation(0)
-        newQC.meterId = MeterID
+        newQC.PartId = PartID
         newQC.userID = currentUser(0)
         newQC.qcPointPass = stat
         newQC.qcPointPassDate = Now
@@ -149,15 +149,15 @@ Public Class FormStation
         Return newQC
     End Function
 
-    Private Function override(ByVal scannedMeterNumber As String, ByVal stat As Boolean) As Boolean
-        Dim meterNo As AqualocDataSet.MetersRow = getMeterRowFromMeterNumber(scannedMeterNumber)
-        If (meterNo IsNot Nothing) Then
-            Dim urow As AqualocDataSet.meterQcPointRow = AqualocDataSet.meterQcPoint.FindBystationIdmeterId(currentStation(0), meterNo.MeterID)
+    Private Function override(ByVal scannedPartNumber As String, ByVal stat As Boolean) As Boolean
+        Dim PartNo As AqualocDataSet.PartRow = getPartRowFromPartNumber(scannedPartNumber)
+        If (PartNo IsNot Nothing) Then
+            Dim urow As AqualocDataSet.PartQcPointRow = AqualocDataSet.PartQcPoint.FindBystationIdPartId(currentStation(0), PartNo.PartID)
             urow.qcPointPass = stat
             push(urow)
             Return True
         Else
-            MsgBox("Could Not Override " & scannedMeterNumber)
+            MsgBox("Could Not Override " & scannedPartNumber)
             Return False
         End If
         Return False

@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DataSetFile="AqualocDataSet.Dataset.Designer.vb" DataSetProject="DataEntityTier" DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="AqualocConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AqualocConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DataAccessTier.My.MySettings.GlobalReference.Default.AqualocConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="AqualocConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="AqualocConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DataAccessTier.My.MySettings.GlobalReference.Default.AqualocConnectionString" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="AqualocConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AqualocConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DataAccessTier.My.MySettings.GlobalReference.Default.AqualocConnectionString1" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="AqualocConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AqualocConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DataAccessTier.My.MySettings.GlobalReference.Default.AqualocConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
@@ -263,7 +263,16 @@ SELECT PartID, PartNumber, PartManufacturedDate, PartDispatchDate, PartQrCode, P
               <Mapping SourceColumn="PartNotes" DataSetColumn="PartNotes" />
               <Mapping SourceColumn="PartRevision" DataSetColumn="PartRevision" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="AqualocConnectionString1 (MySettings)" DbObjectName="Aqualoc.dbo.Part" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetParts" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetParts" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetParts" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT PartID, PartNumber, PartManufacturedDate, PartDispatchDate, PartQrCode, PartNotes, PartRevision FROM dbo.Part</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PartQcPointTableAdapter" GeneratorDataComponentClassName="PartQcPointTableAdapter" Name="PartQcPoint" UserDataComponentName="PartQcPointTableAdapter">
             <MainSource>
@@ -342,7 +351,16 @@ SELECT stationId, PartId, userID, qcPointPass, qcPointPassDate, qcPointPassTime,
               <Mapping SourceColumn="qcPointPassTime" DataSetColumn="qcPointPassTime" />
               <Mapping SourceColumn="qcPointNotes" DataSetColumn="qcPointNotes" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="AqualocConnectionString1 (MySettings)" DbObjectName="Aqualoc.dbo.PartQcPoint" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetPartQCPoints" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetPartQCPoints" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetPartQCPoints" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT stationId, PartId, userID, qcPointPass, qcPointPassDate, qcPointPassTime, qcPointNotes FROM dbo.PartQcPoint</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AssemblyTableAdapter" GeneratorDataComponentClassName="AssemblyTableAdapter" Name="Assembly" UserDataComponentName="AssemblyTableAdapter">
             <MainSource>
@@ -372,7 +390,16 @@ SELECT stationId, PartId, userID, qcPointPass, qcPointPassDate, qcPointPassTime,
               <Mapping SourceColumn="AssemblyDateTime" DataSetColumn="AssemblyDateTime" />
               <Mapping SourceColumn="AssemblyNotes" DataSetColumn="AssemblyNotes" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="AqualocConnectionString1 (MySettings)" DbObjectName="Aqualoc.dbo.[Assembly]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetAssembly" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetAssembly" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetAssembly" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AssemblyID, UserID, AssemblyDateTime, AssemblyNotes FROM dbo.[Assembly]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PartAssemblyTableAdapter" GeneratorDataComponentClassName="PartAssemblyTableAdapter" Name="PartAssembly" UserDataComponentName="PartAssemblyTableAdapter">
             <MainSource>
@@ -423,7 +450,16 @@ SELECT PartID, AssemblyID, PartAssemblyNotes FROM PartAssembly WHERE (AssemblyID
               <Mapping SourceColumn="AssemblyID" DataSetColumn="AssemblyID" />
               <Mapping SourceColumn="PartAssemblyNotes" DataSetColumn="PartAssemblyNotes" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="AqualocConnectionString1 (MySettings)" DbObjectName="Aqualoc.dbo.PartAssembly" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataPartAssembly" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataPartAssembly" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataPartAssembly" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT PartID, AssemblyID, PartAssemblyNotes FROM dbo.PartAssembly</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />

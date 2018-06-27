@@ -23,31 +23,32 @@ Partial Class FormStation
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormStation))
         Me.ButtonScanFeedback = New System.Windows.Forms.Button()
         Me.TxtScanBox = New System.Windows.Forms.TextBox()
         Me.LblScanningOperator = New System.Windows.Forms.Label()
         Me.TextBoxCurrentOperator = New System.Windows.Forms.TextBox()
-        Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
-        Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MetersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MeterQcPointTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.meterQcPointTableAdapter()
-        Me.MetersTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.MetersTableAdapter()
-        Me.StationsTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter()
-        Me.UsersTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter()
-        Me.TableAdapterManager1 = New DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager()
-        Me.MeterQcPointBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.StationsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LabelFailCount = New System.Windows.Forms.Label()
         Me.LabelPassCount = New System.Windows.Forms.Label()
         Me.LblPass = New System.Windows.Forms.Label()
         Me.TextBoxCurrentStation = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
+        Me.StationsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PartQcPointBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PartBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AqualocDataSet1 = New DataEntityTier.AqualocDataSet()
+        Me.TableAdapterManager1 = New DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager()
+        Me.UsersTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter()
+        Me.StationsTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter()
+        Me.PartTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.PartTableAdapter()
+        Me.PartQcPointTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.PartQcPointTableAdapter()
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MetersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MeterQcPointBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StationsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PartQcPointBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PartBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AqualocDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonScanFeedback
@@ -93,56 +94,6 @@ Partial Class FormStation
         Me.TextBoxCurrentOperator.Name = "TextBoxCurrentOperator"
         Me.TextBoxCurrentOperator.Size = New System.Drawing.Size(132, 22)
         Me.TextBoxCurrentOperator.TabIndex = 8
-        '
-        'AqualocDataSet
-        '
-        Me.AqualocDataSet.DataSetName = "AqualocDataSet"
-        Me.AqualocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'UsersBindingSource
-        '
-        Me.UsersBindingSource.DataMember = "Users"
-        Me.UsersBindingSource.DataSource = Me.AqualocDataSet
-        '
-        'MetersBindingSource
-        '
-        Me.MetersBindingSource.DataMember = "Meters"
-        Me.MetersBindingSource.DataSource = Me.AqualocDataSet
-        '
-        'MeterQcPointTableAdapter1
-        '
-        Me.MeterQcPointTableAdapter1.ClearBeforeFill = True
-        '
-        'MetersTableAdapter1
-        '
-        Me.MetersTableAdapter1.ClearBeforeFill = True
-        '
-        'StationsTableAdapter1
-        '
-        Me.StationsTableAdapter1.ClearBeforeFill = True
-        '
-        'UsersTableAdapter1
-        '
-        Me.UsersTableAdapter1.ClearBeforeFill = True
-        '
-        'TableAdapterManager1
-        '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.meterQcPointTableAdapter = Me.MeterQcPointTableAdapter1
-        Me.TableAdapterManager1.MetersTableAdapter = Me.MetersTableAdapter1
-        Me.TableAdapterManager1.StationsTableAdapter = Me.StationsTableAdapter1
-        Me.TableAdapterManager1.UpdateOrder = DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager1.UsersTableAdapter = Me.UsersTableAdapter1
-        '
-        'MeterQcPointBindingSource
-        '
-        Me.MeterQcPointBindingSource.DataMember = "meterQcPoint"
-        Me.MeterQcPointBindingSource.DataSource = Me.AqualocDataSet
-        '
-        'StationsBindingSource
-        '
-        Me.StationsBindingSource.DataMember = "Stations"
-        Me.StationsBindingSource.DataSource = Me.AqualocDataSet
         '
         'LabelFailCount
         '
@@ -195,12 +146,70 @@ Partial Class FormStation
         Me.Label1.TabIndex = 16
         Me.Label1.Text = "Station"
         '
+        'AqualocDataSet
+        '
+        Me.AqualocDataSet.DataSetName = "AqualocDataSet"
+        Me.AqualocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'StationsBindingSource
+        '
+        Me.StationsBindingSource.DataMember = "Stations"
+        Me.StationsBindingSource.DataSource = Me.AqualocDataSet
+        '
+        'UsersBindingSource
+        '
+        Me.UsersBindingSource.DataMember = "Users"
+        Me.UsersBindingSource.DataSource = Me.AqualocDataSet
+        '
+        'PartQcPointBindingSource
+        '
+        Me.PartQcPointBindingSource.DataMember = "PartQcPoint"
+        Me.PartQcPointBindingSource.DataSource = Me.AqualocDataSet
+        '
+        'PartBindingSource
+        '
+        Me.PartBindingSource.DataMember = "Part"
+        Me.PartBindingSource.DataSource = Me.AqualocDataSet
+        '
+        'AqualocDataSet1
+        '
+        Me.AqualocDataSet1.DataSetName = "AqualocDataSet"
+        Me.AqualocDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.AssemblyTableAdapter = Nothing
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.PartAssemblyTableAdapter = Nothing
+        Me.TableAdapterManager1.PartQcPointTableAdapter = Me.PartQcPointTableAdapter1
+        Me.TableAdapterManager1.PartTableAdapter = Me.PartTableAdapter1
+        Me.TableAdapterManager1.StationsTableAdapter = Me.StationsTableAdapter1
+        Me.TableAdapterManager1.UpdateOrder = DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager1.UsersTableAdapter = Me.UsersTableAdapter1
+        '
+        'UsersTableAdapter1
+        '
+        Me.UsersTableAdapter1.ClearBeforeFill = True
+        '
+        'StationsTableAdapter1
+        '
+        Me.StationsTableAdapter1.ClearBeforeFill = True
+        '
+        'PartTableAdapter1
+        '
+        Me.PartTableAdapter1.ClearBeforeFill = True
+        '
+        'PartQcPointTableAdapter1
+        '
+        Me.PartQcPointTableAdapter1.ClearBeforeFill = True
+        '
         'FormStation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(414, 432)
+        Me.ClientSize = New System.Drawing.Size(548, 605)
         Me.Controls.Add(Me.TextBoxCurrentStation)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LabelPassCount)
@@ -212,7 +221,6 @@ Partial Class FormStation
         Me.Controls.Add(Me.ButtonScanFeedback)
         Me.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
@@ -222,10 +230,11 @@ Partial Class FormStation
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Station"
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MetersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MeterQcPointBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StationsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PartQcPointBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PartBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AqualocDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -234,21 +243,22 @@ Partial Class FormStation
     Friend WithEvents TxtScanBox As TextBox
     Friend WithEvents LblScanningOperator As Label
     Friend WithEvents TextBoxCurrentOperator As TextBox
-    Friend WithEvents AqualocDataSet As DataEntityTier.AqualocDataSet
-    Friend WithEvents UsersBindingSource As BindingSource
-    Friend WithEvents MetersBindingSource As BindingSource
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents MeterQcPointTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.meterQcPointTableAdapter
-    Friend WithEvents MetersTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.MetersTableAdapter
-    Friend WithEvents StationsTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter
-    Friend WithEvents UsersTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter
-    Friend WithEvents TableAdapterManager1 As DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents MeterQcPointBindingSource As BindingSource
-    Friend WithEvents StationsBindingSource As BindingSource
     Friend WithEvents LabelFailCount As Label
     Friend WithEvents LabelPassCount As Label
     Friend WithEvents LblPass As Label
     Friend WithEvents TextBoxCurrentStation As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents AqualocDataSet As DataEntityTier.AqualocDataSet
+    Friend WithEvents StationsBindingSource As BindingSource
+    Friend WithEvents UsersBindingSource As BindingSource
+    Friend WithEvents PartQcPointBindingSource As BindingSource
+    Friend WithEvents PartBindingSource As BindingSource
+    Friend WithEvents AqualocDataSet1 As DataEntityTier.AqualocDataSet
+    Friend WithEvents TableAdapterManager1 As DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents PartQcPointTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.PartQcPointTableAdapter
+    Friend WithEvents PartTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.PartTableAdapter
+    Friend WithEvents StationsTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter
+    Friend WithEvents UsersTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter
 End Class

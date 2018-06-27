@@ -9,9 +9,9 @@ Public Class Service1
     Public Function GetData(ByVal value As Integer) As String Implements IService1.GetData
         Return String.Format("You entered: {0}", value)
     End Function
-    Public Function GetMeters() As DataEntityTier.AqualocDataSet.MetersDataTable Implements IService1.GetMeters
-        Dim MetersTableAdapter1 As New DataAccessTier.AqualocDataSetTableAdapters.MetersTableAdapter
-        Return MetersTableAdapter1.GetMeters()
+    Public Function GetPart() As DataEntityTier.AqualocDataSet.PartDataTable Implements IService1.GetParts
+        Dim PartTableAdapter1 As New DataAccessTier.AqualocDataSetTableAdapters.PartTableAdapter
+        Return PartTableAdapter1.GetParts()
     End Function
 
     Public Function GetStations() As DataEntityTier.AqualocDataSet.StationsDataTable Implements IService1.GetStations
@@ -24,9 +24,9 @@ Public Class Service1
         Return UsersTableAdapter1.GetUsers()
     End Function
 
-    Public Function GetMeterQCPoints() As DataEntityTier.AqualocDataSet.meterQcPointDataTable Implements IService1.GetMeterQCPoint
-        Dim MeterQCPointTableAdapter1 As New DataAccessTier.AqualocDataSetTableAdapters.meterQcPointTableAdapter
-        Return MeterQCPointTableAdapter1.GetMeterQCPoints()
+    Public Function GetMeterQCPoints() As DataEntityTier.AqualocDataSet.PartQcPointDataTable Implements IService1.GetMeterQCPoint
+        Dim MeterQCPointTableAdapter1 As New DataAccessTier.AqualocDataSetTableAdapters.PartQcPointTableAdapter
+        Return MeterQCPointTableAdapter1.GetPartQCPoints()
     End Function
     Public Function GetDataUsingDataContract(ByVal composite As CompositeType) As CompositeType Implements IService1.GetDataUsingDataContract
         If composite Is Nothing Then

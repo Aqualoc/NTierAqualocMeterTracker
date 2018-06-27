@@ -1,28 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://tempuri.org/AqualocDataSet.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://tempuri.org/AqualocDataSet.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/AqualocDataSet.xsd" id="AqualocDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/AqualocDataSet.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" xmlns:mstns="http://tempuri.org/AqualocDataSet.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/AqualocDataSet.xsd" id="AqualocDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="AqualocDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Stations">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="StationID" type="xs:int" />
-              <xs:element minOccurs="0" name="stationName">
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="StationID" type="xs:int" />
+              <xs:element minOccurs="0" name="StationName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element minOccurs="0" name="stationFunctions">
+              <xs:element minOccurs="0" name="StationFunctions">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element minOccurs="0" name="stationActive" type="xs:boolean" />
-              <xs:element minOccurs="0" name="stationNotes">
+              <xs:element minOccurs="0" name="StationActive" type="xs:boolean" />
+              <xs:element minOccurs="0" name="StationNotes">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -35,36 +35,15 @@
         <xs:element name="Users">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="PersonID" type="xs:int" />
-              <xs:element minOccurs="0" name="LastName">
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="UserID" type="xs:int" />
+              <xs:element minOccurs="0" name="UserLastName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element minOccurs="0" name="FirstName">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element minOccurs="0" name="Perms">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element minOccurs="0" name="Notes">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element minOccurs="0" name="City">
+              <xs:element minOccurs="0" name="UserFirstName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -75,6 +54,126 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="UserPerms">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="UserCity">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="UserNotes">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Part">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="PartID" type="xs:int" />
+              <xs:element minOccurs="0" name="PartNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PartManufacturedDate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PartDispatchDate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PartQrCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PartNotes">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PartRevision">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PartQcPoint">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="stationId" type="xs:int" />
+              <xs:element name="PartId" type="xs:int" />
+              <xs:element minOccurs="0" name="userID" type="xs:int" />
+              <xs:element minOccurs="0" name="qcPointPass" type="xs:boolean" />
+              <xs:element minOccurs="0" name="qcPointPassDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="qcPointPassTime" type="xs:duration" />
+              <xs:element minOccurs="0" name="qcPointNotes">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element msprop:Generator_TableClassName="AssemblyDataTable" msprop:Generator_RowEvArgName="AssemblyRowChangeEvent" msprop:Generator_TableVarName="tableAssembly" msprop:Generator_RowEvHandlerName="AssemblyRowChangeEventHandler" msprop:Generator_UserTableName="Assembly" msprop:Generator_RowClassName="AssemblyRow" name="Assembly">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="AssemblyID" type="xs:int" />
+              <xs:element minOccurs="0" name="UserID" type="xs:int" />
+              <xs:element minOccurs="0" name="AssemblyDateTime" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="AssemblyNotes">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PartAssembly">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PartID" type="xs:int" />
+              <xs:element name="AssemblyID" type="xs:int" />
+              <xs:element minOccurs="0" name="PartAssemblyNotes">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -89,7 +188,29 @@
     </xs:unique>
     <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Users_Constraint1">
       <xs:selector xpath=".//mstns:Users" />
-      <xs:field xpath="mstns:PersonID" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Part_Constraint1">
+      <xs:selector xpath=".//mstns:Part" />
+      <xs:field xpath="mstns:PartID" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="PartQcPoint_Constraint1">
+      <xs:selector xpath=".//mstns:PartQcPoint" />
+      <xs:field xpath="mstns:stationId" />
+      <xs:field xpath="mstns:PartId" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="PartAssembly_Constraint1">
+      <xs:selector xpath=".//mstns:PartAssembly" />
+      <xs:field xpath="mstns:AssemblyID" />
     </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_meter" msdata:parent="Part" msdata:child="PartQcPoint" msdata:parentkey="PartID" msdata:childkey="PartId" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" />
+      <msdata:Relationship name="FK_station" msdata:parent="Stations" msdata:child="PartQcPoint" msdata:parentkey="StationID" msdata:childkey="stationId" />
+      <msdata:Relationship name="FK_user" msdata:parent="Users" msdata:child="PartQcPoint" msdata:parentkey="UserID" msdata:childkey="userID" />
+      <msdata:Relationship name="FK_Assembly_PartAssembly" msdata:parent="PartAssembly" msdata:child="Assembly" msdata:parentkey="AssemblyID" msdata:childkey="AssemblyID" />
+      <msdata:Relationship name="FK_PartAssembly_Part" msdata:parent="Part" msdata:child="PartAssembly" msdata:parentkey="PartID" msdata:childkey="PartID" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

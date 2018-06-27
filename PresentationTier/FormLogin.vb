@@ -29,8 +29,8 @@ Public Class FormLogin
             Dim currentUserRole As String = currentUserDataRow(4)
             Select Case currentUserRole
                 Case "A"
-                    Dim FormAdmin As New FormAdmin(currentUserDataRow, currentUserStation)
-                    FormAdmin.Show()
+                    'Dim FormAdmin As New FormAdmin(currentUserDataRow, currentUserStation)
+                    ' FormAdmin.Show()
                     Me.Close()
                 Case "Q"
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fe1099bf-23fb-49d8-8e59-75020b8340db" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8769e7b3-3830-4b36-aa8a-dfe255bd6cde" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,15 +19,16 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/DataService/Service1/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost:61845/Service1.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="ab2efaa7-3001-4084-897c-58ab57e1f90a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DataService/Service1/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="fe70768b-ebe0-475b-b014-129cc3f41842" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DataService/Service1/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="92d0c04d-a1b0-4ae5-a3db-90a61a5df32b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DataService/Service1/mex" />
-    <MetadataFile FileName="DataService.xsd" MetadataType="Schema" ID="3b04f129-d731-4809-a148-81ecf4eecfbf" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DataService/Service1/mex" />
-    <MetadataFile FileName="AqualocDataSet.xsd" MetadataType="Schema" ID="802df976-f210-427c-814f-69af24a08ae2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DataService/Service1/mex" />
-    <MetadataFile FileName="DataEntityTier.xsd" MetadataType="Schema" ID="2f44dd9d-400f-44c6-8971-3f56b9bb7576" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/DataService/Service1/mex" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="cfa18094-7dd1-4976-af52-20fca3799e9b" SourceId="1" SourceUrl="http://localhost:61845/Service1.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="554933cb-0491-44c0-bc4c-eb0bc3f5d297" SourceId="1" SourceUrl="http://localhost:61845/Service1.svc?disco" />
+    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="b86c69eb-235d-4dbe-91cf-b0cf4c700ab6" SourceId="1" SourceUrl="http://localhost:61845/Service1.svc?xsd=xsd4" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="e7ca0709-1667-430f-9a9f-dd88af55a62d" SourceId="1" SourceUrl="http://localhost:61845/Service1.svc?wsdl" />
+    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="89786c19-cd48-41fe-86f5-a6587990944b" SourceId="1" SourceUrl="http://localhost:61845/Service1.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service13.xsd" MetadataType="Schema" ID="a3bfcd05-f14a-4e7a-8d8e-d215773ff0b9" SourceId="1" SourceUrl="http://localhost:61845/Service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="AqualocDataSet.xsd" MetadataType="Schema" ID="aa39147c-72bc-4f62-8284-a173d79ef394" SourceId="1" SourceUrl="http://localhost:61845/Service1.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

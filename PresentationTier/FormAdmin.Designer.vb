@@ -28,26 +28,24 @@ Partial Class FormAdmin
         Me.btnCreateStation = New System.Windows.Forms.Button()
         Me.btnCreateStickers = New System.Windows.Forms.Button()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.StationsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ButtonExit = New System.Windows.Forms.Button()
-        Me.MetersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.AqualocDataSet = New DataEntityTier.AqualocDataSet()
+        Me.PartBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PartQcPointBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PartTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.PartTableAdapter()
         Me.UsersTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter()
-        Me.MetersTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.MetersTableAdapter()
         Me.StationsTableAdapter1 = New DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter()
         Me.TableAdapterManager1 = New DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager()
-        Me.FKuserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StationsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MetersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FKuserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PartBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PartQcPointBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCreateUser
@@ -100,8 +98,7 @@ Partial Class FormAdmin
         '
         'ComboBox3
         '
-        Me.ComboBox3.DataSource = Me.UsersBindingSource
-        Me.ComboBox3.DisplayMember = "UserFirstName"
+        Me.ComboBox3.DisplayMember = "UserID"
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ComboBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -112,20 +109,9 @@ Partial Class FormAdmin
         Me.ComboBox3.TabIndex = 11
         Me.ComboBox3.ValueMember = "UserID"
         '
-        'UsersBindingSource
-        '
-        Me.UsersBindingSource.DataMember = "Users"
-        Me.UsersBindingSource.DataSource = Me.AqualocDataSet
-        '
-        'AqualocDataSet
-        '
-        Me.AqualocDataSet.DataSetName = "AqualocDataSet"
-        Me.AqualocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ComboBox4
         '
-        Me.ComboBox4.DataSource = Me.StationsBindingSource
-        Me.ComboBox4.DisplayMember = "StationFunctions"
+        Me.ComboBox4.DisplayMember = "StationID"
         Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ComboBox4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -135,11 +121,6 @@ Partial Class FormAdmin
         Me.ComboBox4.Size = New System.Drawing.Size(195, 29)
         Me.ComboBox4.TabIndex = 12
         Me.ComboBox4.ValueMember = "StationID"
-        '
-        'StationsBindingSource
-        '
-        Me.StationsBindingSource.DataMember = "Stations"
-        Me.StationsBindingSource.DataSource = Me.AqualocDataSet
         '
         'Label1
         '
@@ -183,37 +164,6 @@ Partial Class FormAdmin
         Me.ButtonExit.Text = "Exit"
         Me.ButtonExit.UseVisualStyleBackColor = False
         '
-        'MetersBindingSource
-        '
-        Me.MetersBindingSource.DataMember = "Meters"
-        Me.MetersBindingSource.DataSource = Me.AqualocDataSet
-        '
-        'UsersTableAdapter1
-        '
-        Me.UsersTableAdapter1.ClearBeforeFill = True
-        '
-        'MetersTableAdapter1
-        '
-        Me.MetersTableAdapter1.ClearBeforeFill = True
-        '
-        'StationsTableAdapter1
-        '
-        Me.StationsTableAdapter1.ClearBeforeFill = True
-        '
-        'TableAdapterManager1
-        '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.meterQcPointTableAdapter = Nothing
-        Me.TableAdapterManager1.MetersTableAdapter = Me.MetersTableAdapter1
-        Me.TableAdapterManager1.StationsTableAdapter = Me.StationsTableAdapter1
-        Me.TableAdapterManager1.UpdateOrder = DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager1.UsersTableAdapter = Me.UsersTableAdapter1
-        '
-        'FKuserBindingSource
-        '
-        Me.FKuserBindingSource.DataMember = "FK_user"
-        Me.FKuserBindingSource.DataSource = Me.UsersBindingSource
-        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.ButtonFace
@@ -226,12 +176,55 @@ Partial Class FormAdmin
         Me.Button1.Text = "Restart"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'AqualocDataSet
+        '
+        Me.AqualocDataSet.DataSetName = "AqualocDataSet"
+        Me.AqualocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PartBindingSource
+        '
+        Me.PartBindingSource.DataMember = "Part"
+        Me.PartBindingSource.DataSource = Me.AqualocDataSet
+        '
+        'UsersBindingSource
+        '
+        Me.UsersBindingSource.DataMember = "Users"
+        Me.UsersBindingSource.DataSource = Me.AqualocDataSet
+        '
+        'PartQcPointBindingSource
+        '
+        Me.PartQcPointBindingSource.DataMember = "PartQcPoint"
+        Me.PartQcPointBindingSource.DataSource = Me.AqualocDataSet
+        '
+        'PartTableAdapter1
+        '
+        Me.PartTableAdapter1.ClearBeforeFill = True
+        '
+        'UsersTableAdapter1
+        '
+        Me.UsersTableAdapter1.ClearBeforeFill = True
+        '
+        'StationsTableAdapter1
+        '
+        Me.StationsTableAdapter1.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.AssemblyTableAdapter = Nothing
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.PartAssemblyTableAdapter = Nothing
+        Me.TableAdapterManager1.PartQcPointTableAdapter = Nothing
+        Me.TableAdapterManager1.PartTableAdapter = Me.PartTableAdapter1
+        Me.TableAdapterManager1.StationsTableAdapter = Me.StationsTableAdapter1
+        Me.TableAdapterManager1.UpdateOrder = DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager1.UsersTableAdapter = Me.UsersTableAdapter1
+        '
         'FormAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
-        Me.ClientSize = New System.Drawing.Size(485, 415)
+        Me.ClientSize = New System.Drawing.Size(481, 419)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ButtonExit)
         Me.Controls.Add(Me.Label3)
@@ -246,11 +239,10 @@ Partial Class FormAdmin
         Me.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "FormAdmin"
         Me.Text = "Admin"
-        CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AqualocDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StationsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MetersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FKuserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PartBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PartQcPointBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -268,14 +260,13 @@ Partial Class FormAdmin
     Friend WithEvents ButtonExit As Button
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
     Friend WithEvents AqualocDataSet As DataEntityTier.AqualocDataSet
-    Friend WithEvents MetersBindingSource As BindingSource
+    Friend WithEvents PartBindingSource As BindingSource
     Friend WithEvents UsersBindingSource As BindingSource
+    Friend WithEvents PartQcPointBindingSource As BindingSource
+    Friend WithEvents PartTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.PartTableAdapter
     Friend WithEvents UsersTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.UsersTableAdapter
-    Friend WithEvents MetersTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.MetersTableAdapter
     Friend WithEvents StationsTableAdapter1 As DataAccessTier.AqualocDataSetTableAdapters.StationsTableAdapter
     Friend WithEvents TableAdapterManager1 As DataAccessTier.AqualocDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents StationsBindingSource As BindingSource
-    Friend WithEvents FKuserBindingSource As BindingSource
-    Friend WithEvents Button1 As Button
 End Class
